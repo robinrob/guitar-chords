@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ViewController.swift"
+            timestampString = "532533722.31282"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__deallocating_deinit"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473641.949186"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; GuitarChords.ViewController"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473641.950287"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; GuitarChords.ViewController"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473641.951393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "283">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;GuitarChords.ViewController&gt;"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473641.952587"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;GuitarChords.ViewController&gt;"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473641.954355"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ViewController.swift"
+            timestampString = "532533722.313077"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__deallocating_deinit"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473655.738452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; GuitarChords.ViewController"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473655.739556"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; GuitarChords.ViewController"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473655.740618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "283">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;GuitarChords.ViewController&gt;"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473655.741786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChords.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;GuitarChords.ViewController&gt;"
+                  moduleName = "GuitarChords"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChords/ViewController.swift"
+                  timestampString = "532473655.743701"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ViewController.swift"
+            timestampString = "532533722.313253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ViewController.swift"
+            timestampString = "532533722.313421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "displayChord(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
