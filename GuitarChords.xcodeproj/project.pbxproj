@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */; };
+		0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABB1FBDD9DB005B3EB1 /* Note.swift */; };
+		0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABD1FBDD9F6005B3EB1 /* Chord.swift */; };
 		006D0EE91FB5BE2B00E85F4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */; };
 		006D0EEB1FB5BE2B00E85F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */; };
 		006D0EEE1FB5BE2B00E85F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D0EEC1FB5BE2B00E85F4D /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarChordsBrain.swift; sourceTree = "<group>"; };
+		0069AABB1FBDD9DB005B3EB1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		0069AABD1FBDD9F6005B3EB1 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		006D0EE51FB5BE2B00E85F4D /* GuitarChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +83,6 @@
 		006D0EDC1FB5BE2B00E85F4D = {
 			isa = PBXGroup;
 			children = (
-				0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */,
 				006D0EE71FB5BE2B00E85F4D /* GuitarChords */,
 				006D0EFC1FB5BE2B00E85F4D /* GuitarChordsTests */,
 				006D0F071FB5BE2C00E85F4D /* GuitarChordsUITests */,
@@ -100,12 +103,15 @@
 		006D0EE71FB5BE2B00E85F4D /* GuitarChords */ = {
 			isa = PBXGroup;
 			children = (
+				0069AABB1FBDD9DB005B3EB1 /* Note.swift */,
+				0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */,
 				006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */,
 				006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */,
 				006D0EEC1FB5BE2B00E85F4D /* Main.storyboard */,
 				006D0EEF1FB5BE2B00E85F4D /* Assets.xcassets */,
 				006D0EF11FB5BE2B00E85F4D /* LaunchScreen.storyboard */,
 				006D0EF41FB5BE2B00E85F4D /* Info.plist */,
+				0069AABD1FBDD9F6005B3EB1 /* Chord.swift */,
 			);
 			path = GuitarChords;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				006D0EEB1FB5BE2B00E85F4D /* ViewController.swift in Sources */,
+				0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */,
 				0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */,
 				006D0EE91FB5BE2B00E85F4D /* AppDelegate.swift in Sources */,
+				0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

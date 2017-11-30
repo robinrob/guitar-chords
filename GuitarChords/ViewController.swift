@@ -8,77 +8,118 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-
+    @IBOutlet weak var chordChoice: UIPickerView!
+    @IBOutlet weak var variationChoice: UIPickerView!
+    
     @IBOutlet var e1: [UIButton]!
     @IBOutlet var a: [UIButton]!
     @IBOutlet var d: [UIButton]!
     @IBOutlet var g: [UIButton]!
     @IBOutlet var b: [UIButton]!
     @IBOutlet var e2: [UIButton]!
-//
+    
+    var chords = [
+        "C Major",
+        "D Major",
+        "E Major",
+        "F Major",
+        "G Major",
+        "A Major",
+        "B Major",
+    ]
+    
+    var variations = [
+        "One"
+    ]
+    
     var strings: [[UIButton]] {
         get {
-//            return [e1, a, d, g, b, e2]
-            return [e1]
+            return [e1, a, d, g, b, e2]
         }
     }
-//
-//    var isCSelected: Bool = false
-//
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        initStrings()
+        chordChoice.dataSource = self
+        chordChoice.delegate = self
+        variationChoice.dataSource = self
+        variationChoice.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func showChord(_ sender: UIButton) {
-        if !sender.isSelected {
-            sender.isSelected = true
-            let name = sender.currentTitle!
-            displayChord(name)
-        } else {
-            sender.isSelected = false
-            clearAllStrings()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case chordChoice:
+            return chords.count
+        case variationChoice:
+            return 1
+        default:
+            return 1
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        switch pickerView {
+        case chordChoice:
+            return chords[row]
+        case variationChoice:
+            return variations[row]
+        default:
+            return nil
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                             didSelectRow row: Int,
+                             inComponent component: Int) {
+        switch pickerView {
+        case chordChoice:
+            displayChord(chords[row])
+        case variationChoice:
+            print("Chose variation: \(variations[row])")
+        default:
+            print("Unrecognised picker view choice")
         }
     }
 
     func displayChord(_ name: String) {
-        print("here")
-        if name == "C" {
+        switch name {
+        case "C Major":
             displayCChord()
-        } else {
+        case "B Major", "D Major", "E Major", "F Major", "G Major", "A Major":
+            clearAllStrings()
             print(strings)
             for string in strings {
                 for fret in string {
                     fret.backgroundColor = UIColor.red
                 }
             }
+        default:
+            print("Unrecognised chord: \(name)")
         }
     }
 
     func displayCChord() {
-//        for fret in e1 {
-//            fret.backgroundColor = UIColor.gray
-//        }
-//        selectFret(a, 3)
-//        selectFret(d, 2)
-//        selectFret(b, 1)
-
-        print(e1)
-        selectFret(e1, 14)
-//        selectFret(a, 1)
-//        selectFret(d, 1)
-//        selectFret(g, 1)
-//        selectFret(b, 1)
-//        selectFret(e2, 1)
+        clearAllStrings()
+        selectFret(a, 3)
+        selectFret(d, 2)
+        selectFret(b, 1)
     }
 
     func selectFret(_ string: [UIButton], _ fretNum: Int) {

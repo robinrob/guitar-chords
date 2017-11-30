@@ -1,5 +1,5 @@
 //
-//  GuitarChordsBrain.swift
+//  Chord.swift
 //  GuitarChords
 //
 //  Created by  Robin Smith on 16/11/2017.
@@ -9,10 +9,12 @@
 import Foundation
 
 
-struct GuitarChordsBrain {
-    private enum Chord {
-        case c("C")
-    }
-
-    
+enum Chord {
+    case cMajor
+    case dMajor
+    case eMajor
+    case fMajor
+    case gMajor
+    case aMajor
+    case bMajor
 }
