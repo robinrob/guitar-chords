@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002B59911FD17A2200287ABA /* FretButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002B59901FD17A2200287ABA /* FretButton.swift */; };
 		0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */; };
 		0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABB1FBDD9DB005B3EB1 /* Note.swift */; };
 		0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABD1FBDD9F6005B3EB1 /* Chord.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002B59901FD17A2200287ABA /* FretButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretButton.swift; sourceTree = "<group>"; };
 		0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarChordsBrain.swift; sourceTree = "<group>"; };
 		0069AABB1FBDD9DB005B3EB1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		0069AABD1FBDD9F6005B3EB1 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				0069AABB1FBDD9DB005B3EB1 /* Note.swift */,
 				0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */,
+				002B59901FD17A2200287ABA /* FretButton.swift */,
 				006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */,
 				006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */,
 				006D0EEC1FB5BE2B00E85F4D /* Main.storyboard */,
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002B59911FD17A2200287ABA /* FretButton.swift in Sources */,
 				006D0EEB1FB5BE2B00E85F4D /* ViewController.swift in Sources */,
 				0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */,
 				0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */,

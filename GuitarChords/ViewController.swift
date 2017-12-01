@@ -13,12 +13,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var chordChoice: UIPickerView!
     @IBOutlet weak var variationChoice: UIPickerView!
     
-    @IBOutlet var e1: [UIButton]!
-    @IBOutlet var a: [UIButton]!
-    @IBOutlet var d: [UIButton]!
-    @IBOutlet var g: [UIButton]!
-    @IBOutlet var b: [UIButton]!
-    @IBOutlet var e2: [UIButton]!
+    @IBOutlet var e1: [FretButton]!
+    @IBOutlet var a: [FretButton]!
+    @IBOutlet var d: [FretButton]!
+    @IBOutlet var g: [FretButton]!
+    @IBOutlet var b: [FretButton]!
+    @IBOutlet var e2: [FretButton]!
     
     var chords = [
         "C Major",
@@ -28,18 +28,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         "G Major",
         "A Major",
         "B Major",
+        "C Major"
     ]
     
     var variations = [
         "One"
     ]
     
-    var strings: [[UIButton]] {
+    var strings: [String: [FretButton]] {
         get {
-            return [e1, a, d, g, b, e2]
+            return [
+                "e1": e1,
+                "a": a,
+                "d": d,
+                "g": g,
+                "b": b,
+                "e2": e2
+            ]
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +56,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chordChoice.delegate = self
         variationChoice.dataSource = self
         variationChoice.delegate = self
+        
+        for stringName in strings.keys {
+            let string = strings[stringName]!
+            
+            for (fretIndex, fret) in string.enumerated() {
+                fret.addTarget(self, action: #selector(pressFret(_:)), for: .touchUpInside)
+                fret.name = "\(stringName)\(fretIndex+1)"
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,13 +121,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case "B Major", "D Major", "E Major", "F Major", "G Major", "A Major":
             clearAllStrings()
             print(strings)
-            for string in strings {
+            for string in strings.values {
                 for fret in string {
-                    fret.backgroundColor = UIColor.red
+                    fret.activate()
                 }
             }
         default:
-            print("Unrecognised chord: \(name)")
+            print("Unrecognised chord:")
         }
     }
 
@@ -122,25 +138,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         selectFret(b, 1)
     }
 
-    func selectFret(_ string: [UIButton], _ fretNum: Int) {
+    func selectFret(_ string: [FretButton], _ fretNum: Int) {
         print(fretNum)
         string[fretNum-1].backgroundColor = UIColor.red
     }
 
     func clearAllStrings() {
-        for string in strings {
+        for string in strings.values {
             clearString(string)
         }
     }
 
-    func clearString(_ string: [UIButton]) {
+    func clearString(_ string: [FretButton]) {
         for fret in string {
-            fret.backgroundColor = #colorLiteral(red: 0.8761691451, green: 0.5170841813, blue: 0.1610716283, alpha: 1)
+            fret.reset()
         }
     }
 
     func initStrings() {
         clearAllStrings()
+    }
+    
+    
+    @objc func pressFret(_ sender: FretButton) {
+        sender.activate()
+        print("sender.name: \(String(describing: sender.name!))")
+        self.setNeedsFocusUpdate()
     }
 }
 
