@@ -30,8 +30,6 @@ import UIKit
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        
-        reset()
     }
     
     func reset() {
@@ -39,11 +37,7 @@ import UIKit
     }
     
     func activate() {
-        print("Activating!")
         self.backgroundColor = FretButton.backgroundColors["activated"]!
-        self.layer.backgroundColor = UIColor.red.cgColor
-        self.setNeedsDisplay()
-        self.setNeedsFocusUpdate()
     }
 }
 

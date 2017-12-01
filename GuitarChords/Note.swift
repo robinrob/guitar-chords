@@ -8,17 +8,21 @@
 
 import Foundation
 
-private enum Note {
-    case c
-    case cSharp
-    case d
-    case dSharp
-    case e
-    case f
-    case fSharp
-    case g
-    case gSharp
-    case a
-    case aSharp
-    case b
+enum Note: Int {
+    case c = 1
+    case cSharp = 2
+    case d = 3
+    case dSharp = 4
+    case e = 5
+    case f = 6
+    case fSharp = 7
+    case g = 8
+    case gSharp = 9
+    case a = 10
+    case aSharp = 11
+    case b = 12
+    
+    public func advance(bySemiTones: Int) -> Note {
+        return Note(rawValue: (self.rawValue + bySemiTones) % 12)!
+    }
 }

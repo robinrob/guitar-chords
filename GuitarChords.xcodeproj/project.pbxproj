@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0003C9571FD1A9C200EB896B /* GuitarString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9561FD1A9C200EB896B /* GuitarString.swift */; };
+		0003C9591FD1ACD700EB896B /* GuitarFret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9581FD1ACD700EB896B /* GuitarFret.swift */; };
+		0003C95B1FD1AF1B00EB896B /* Guitar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C95A1FD1AF1B00EB896B /* Guitar.swift */; };
+		0003C95D1FD1AF5B00EB896B /* GuitarStringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C95C1FD1AF5B00EB896B /* GuitarStringType.swift */; };
+		0003C9611FD1B26100EB896B /* ChordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9601FD1B26100EB896B /* ChordType.swift */; };
+		0003C9671FD1B8ED00EB896B /* ChordPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9661FD1B8ED00EB896B /* ChordPattern.swift */; };
+		0003C9691FD1B90C00EB896B /* FingerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9681FD1B90C00EB896B /* FingerPosition.swift */; };
 		002B59911FD17A2200287ABA /* FretButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002B59901FD17A2200287ABA /* FretButton.swift */; };
 		0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */; };
 		0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABB1FBDD9DB005B3EB1 /* Note.swift */; };
@@ -38,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0003C9561FD1A9C200EB896B /* GuitarString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarString.swift; sourceTree = "<group>"; };
+		0003C9581FD1ACD700EB896B /* GuitarFret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarFret.swift; sourceTree = "<group>"; };
+		0003C95A1FD1AF1B00EB896B /* Guitar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guitar.swift; sourceTree = "<group>"; };
+		0003C95C1FD1AF5B00EB896B /* GuitarStringType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarStringType.swift; sourceTree = "<group>"; };
+		0003C9601FD1B26100EB896B /* ChordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordType.swift; sourceTree = "<group>"; };
+		0003C9661FD1B8ED00EB896B /* ChordPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPattern.swift; sourceTree = "<group>"; };
+		0003C9681FD1B90C00EB896B /* FingerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPosition.swift; sourceTree = "<group>"; };
 		002B59901FD17A2200287ABA /* FretButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretButton.swift; sourceTree = "<group>"; };
 		0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarChordsBrain.swift; sourceTree = "<group>"; };
 		0069AABB1FBDD9DB005B3EB1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -85,6 +99,8 @@
 		006D0EDC1FB5BE2B00E85F4D = {
 			isa = PBXGroup;
 			children = (
+				0003C9661FD1B8ED00EB896B /* ChordPattern.swift */,
+				0003C9681FD1B90C00EB896B /* FingerPosition.swift */,
 				006D0EE71FB5BE2B00E85F4D /* GuitarChords */,
 				006D0EFC1FB5BE2B00E85F4D /* GuitarChordsTests */,
 				006D0F071FB5BE2C00E85F4D /* GuitarChordsUITests */,
@@ -106,7 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				0069AABB1FBDD9DB005B3EB1 /* Note.swift */,
+				0003C9601FD1B26100EB896B /* ChordType.swift */,
+				0003C9581FD1ACD700EB896B /* GuitarFret.swift */,
+				0003C95A1FD1AF1B00EB896B /* Guitar.swift */,
 				0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */,
+				0003C9561FD1A9C200EB896B /* GuitarString.swift */,
+				0003C95C1FD1AF5B00EB896B /* GuitarStringType.swift */,
 				002B59901FD17A2200287ABA /* FretButton.swift */,
 				006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */,
 				006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */,
@@ -271,12 +292,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0003C9591FD1ACD700EB896B /* GuitarFret.swift in Sources */,
 				002B59911FD17A2200287ABA /* FretButton.swift in Sources */,
 				006D0EEB1FB5BE2B00E85F4D /* ViewController.swift in Sources */,
+				0003C95B1FD1AF1B00EB896B /* Guitar.swift in Sources */,
+				0003C95D1FD1AF5B00EB896B /* GuitarStringType.swift in Sources */,
+				0003C9571FD1A9C200EB896B /* GuitarString.swift in Sources */,
 				0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */,
 				0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */,
+				0003C9611FD1B26100EB896B /* ChordType.swift in Sources */,
 				006D0EE91FB5BE2B00E85F4D /* AppDelegate.swift in Sources */,
+				0003C9691FD1B90C00EB896B /* FingerPosition.swift in Sources */,
 				0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */,
+				0003C9671FD1B8ED00EB896B /* ChordPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

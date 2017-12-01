@@ -120,7 +120,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             displayCChord()
         case "B Major", "D Major", "E Major", "F Major", "G Major", "A Major":
             clearAllStrings()
-            print(strings)
             for string in strings.values {
                 for fret in string {
                     fret.activate()
@@ -139,7 +138,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func selectFret(_ string: [FretButton], _ fretNum: Int) {
-        print(fretNum)
         string[fretNum-1].backgroundColor = UIColor.red
     }
 
@@ -163,7 +161,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @objc func pressFret(_ sender: FretButton) {
         sender.activate()
         print("sender.name: \(String(describing: sender.name!))")
-        self.setNeedsFocusUpdate()
     }
 }
 
