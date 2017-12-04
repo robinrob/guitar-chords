@@ -9,11 +9,13 @@
 import Foundation
 
 class GuitarString {
+    var type: GuitarStringType
     var baseNote: Note
     var frets: [GuitarFret]
     
-    init(withBaseNote: Note) {
+    init(ofType stringType: GuitarStringType, withBaseNote: Note) {
         self.baseNote = withBaseNote
+        self.type = stringType
         
         self.frets = []
         for fretNum in 1...14 {

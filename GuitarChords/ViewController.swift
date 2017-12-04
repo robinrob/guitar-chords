@@ -65,6 +65,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 fret.name = "\(stringName)\(fretIndex+1)"
             }
         }
+        
+        let fingerPatterns = Guitar(withFrets: 14).findAllFingerPatterns(ofChordType: ChordType.cMajor)
+        print(fingerPatterns)
     }
 
     override func didReceiveMemoryWarning() {

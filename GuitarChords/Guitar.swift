@@ -17,33 +17,34 @@ class Guitar {
         self.withFrets = withFrets
         
         self.strings = [
-            GuitarString(withBaseNote: Note.e),
-            GuitarString(withBaseNote: Note.a),
-            GuitarString(withBaseNote: Note.d),
-            GuitarString(withBaseNote: Note.g),
-            GuitarString(withBaseNote: Note.b),
-            GuitarString(withBaseNote: Note.e),
+            GuitarString(ofType: GuitarStringType.e1, withBaseNote: Note.e),
+            GuitarString(ofType: GuitarStringType.a,withBaseNote: Note.a),
+            GuitarString(ofType: GuitarStringType.d,withBaseNote: Note.d),
+            GuitarString(ofType: GuitarStringType.g,withBaseNote: Note.g),
+            GuitarString(ofType: GuitarStringType.b,withBaseNote: Note.b),
+            GuitarString(ofType: GuitarStringType.e2,withBaseNote: Note.e),
         ]
     }
     
-    func findAllChordPatterns(ofType chordType: ChordType, fromFret: Int, toFret: Int) {
-        let chord = Chord(ofType: chordType)
-        var chordPatterns: [ChordPattern] = []
+    func findAllFingerPatterns(ofChordType chordType: ChordType, withFretWidth: Int = 4) -> [FingerPattern] {
+        var fingerPositionsByString: [[FingerPosition]] = []
+        for string in strings {
+            var fingerPositions: [FingerPosition] = []
+            for fretNum in 1...4 {
+                fingerPositions.append(FingerPosition(fret: string.getFret(atFretNum: fretNum)))
+            }
+            fingerPositionsByString.append(fingerPositions)
+        }
         
-        var fingerPositions: [FingerPosition] = []
-        for string in self.strings {
-            for fretNum in fromFret...toFret {
-                let fret = string.getFret(atFretNum: fretNum)
-                if chord.notes.contains(fret.note) {
-                    fingerPositions.append(FingerPosition(fret: fret))
-                } else {
-                    fingerPositions.append(FingerPosition(fret: nil))
-                }
+        let fingerPositionPossibilities = ArrayMultiplier<FingerPosition>().multiply(fingerPositionsByString)
+        
+        var fingerPatterns: [FingerPattern] = []
+        for fingerPositionPossibility in fingerPositionPossibilities {
+            let fingerPattern = FingerPattern(fingerPositions: fingerPositionPossibility)
+            if fingerPattern.isChord(chordType: chordType) {
+                fingerPatterns.append(fingerPattern)
             }
         }
-        
-        if fingerPositions.filter({ $0.isMuted }).count > 2 {
-            chordPatterns.append(ChordPattern(fingerPositions: fingerPositions))
-        }
+        return fingerPatterns
     }
 }

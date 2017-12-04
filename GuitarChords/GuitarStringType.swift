@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum GuitarStringType {
-    case e1
-    case a
-    case d
-    case g
-    case b
-    case e2
+enum GuitarStringType: String {
+    case e1 = "E1"
+    case a = "A"
+    case d = "D"
+    case g = "G"
+    case b = "B"
+    case e2 = "E2"
 }

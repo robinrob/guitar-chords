@@ -13,6 +13,9 @@ class FingerPosition {
     var isMuted: Bool {
         return fret == nil
     }
+    var note: Note {
+        return fret!.note
+    }
     
     init(fret: GuitarFret?) {
         self.fret = fret
