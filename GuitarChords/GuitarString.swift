@@ -9,21 +9,28 @@
 import Foundation
 
 class GuitarString {
+    weak var guitar: Guitar?
     var type: GuitarStringType
-    var baseNote: Note
-    var frets: [GuitarFret]
+    var baseNote: Note {
+        return self.type.baseNote
+    }
+    private var frets: [GuitarFret]
+    var numFrets: Int {
+        return self.guitar!.numFrets
+    }
     
-    init(ofType stringType: GuitarStringType, withBaseNote: Note) {
-        self.baseNote = withBaseNote
+    required init(onGuitar guitar: Guitar, ofType stringType: GuitarStringType) {
+        self.guitar = guitar
         self.type = stringType
         
         self.frets = []
-        for fretNum in 1...14 {
+        for fretNum in 0...self.guitar!.numFrets {
             self.frets.append(GuitarFret(onString: self, fretNum: fretNum))
         }
     }
     
-    func getFret(atFretNum: Int) -> GuitarFret {
-        return self.frets[atFretNum-1]
+    func getFret(atFretNum fretNum: Int) -> GuitarFret {
+        return self.frets[fretNum]
     }
 }
+

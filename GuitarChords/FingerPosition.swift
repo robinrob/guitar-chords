@@ -11,13 +11,16 @@ import Foundation
 class FingerPosition {
     let fret: GuitarFret?
     var isMuted: Bool {
-        return fret == nil
+        return self.fret == nil
+    }
+    var isOpenString: Bool {
+        return self.fret!.fretNum == 0
     }
     var note: Note {
-        return fret!.note
+        return self.fret!.note
     }
     
-    init(fret: GuitarFret?) {
+    init(atFret fret: GuitarFret?) {
         self.fret = fret
     }
 }

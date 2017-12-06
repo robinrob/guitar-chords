@@ -14,7 +14,7 @@ class GuitarFret {
     let fretNum: Int
     var note: Note {
         get {
-            return self.string!.baseNote.advance(bySemiTones: self.fretNum)
+            return self.string!.baseNote.advanced(bySemiTones: self.fretNum)
         }
     }
     

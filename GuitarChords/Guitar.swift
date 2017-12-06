@@ -10,20 +10,16 @@ import Foundation
 
 
 class Guitar {
-    var withFrets: Int
+    var numFrets: Int
     var strings: [GuitarString]
     
-    init(withFrets: Int) {
-        self.withFrets = withFrets
-        
-        self.strings = [
-            GuitarString(ofType: GuitarStringType.e1, withBaseNote: Note.e),
-            GuitarString(ofType: GuitarStringType.a,withBaseNote: Note.a),
-            GuitarString(ofType: GuitarStringType.d,withBaseNote: Note.d),
-            GuitarString(ofType: GuitarStringType.g,withBaseNote: Note.g),
-            GuitarString(ofType: GuitarStringType.b,withBaseNote: Note.b),
-            GuitarString(ofType: GuitarStringType.e2,withBaseNote: Note.e),
-        ]
+    init(withNumFrets numFrets: Int = 14) {
+        self.numFrets = numFrets
+    
+        self.strings = []
+        for stringType in GuitarStringType.all() {
+            self.strings.append(GuitarString(onGuitar: self, ofType: stringType))
+        }
     }
     
     func findAllFingerPatterns(ofChordType chordType: ChordType, withFretWidth: Int = 4) -> [FingerPattern] {
@@ -31,7 +27,7 @@ class Guitar {
         for string in strings {
             var fingerPositions: [FingerPosition] = []
             for fretNum in 1...4 {
-                fingerPositions.append(FingerPosition(fret: string.getFret(atFretNum: fretNum)))
+                fingerPositions.append(FingerPosition(atFret: string.getFret(atFretNum: fretNum)))
             }
             fingerPositionsByString.append(fingerPositions)
         }

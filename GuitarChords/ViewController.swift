@@ -66,8 +66,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-        let fingerPatterns = Guitar(withFrets: 14).findAllFingerPatterns(ofChordType: ChordType.cMajor)
-        print(fingerPatterns)
+//        let fingerPatterns = Guitar(withFrets: 14).findAllFingerPatterns(ofChordType: ChordType.cMajor)
+//        print(fingerPatterns)
     }
 
     override func didReceiveMemoryWarning() {

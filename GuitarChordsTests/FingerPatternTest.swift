@@ -1,15 +1,15 @@
 //
-//  GuitarChordsTests.swift
+//  FingerPatternTest.swift
 //  GuitarChordsTests
 //
-//  Created by  Robin Smith on 10/11/2017.
+//  Created by  Robin Smith on 04/12/2017.
 //  Copyright © 2017  Robin Smith. All rights reserved.
 //
 
 import XCTest
 @testable import GuitarChords
 
-class GuitarChordsTests: XCTestCase {
+class FingerPatternTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,6 @@ class GuitarChordsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFingerPatternShouldBeEqualToCMajorChord() {
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

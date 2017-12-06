@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Chord: Equatable {
+struct Chord: Equatable {
     let notes: [Note]
     
     init(withNotes notes: [Note]) {

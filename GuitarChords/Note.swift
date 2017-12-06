@@ -22,7 +22,7 @@ enum Note: Int {
     case aSharp = 11
     case b = 12
     
-    public func advance(bySemiTones: Int) -> Note {
+    public func advanced(bySemiTones: Int) -> Note {
         return Note(rawValue: (self.rawValue + bySemiTones) % 12)!
     }
 }
