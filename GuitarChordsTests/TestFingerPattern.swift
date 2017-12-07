@@ -134,4 +134,44 @@ class TestFingerPattern: XCTestCase {
         assert(GuitarStringType.e2 == pos.guitarString.type)
         assert(pos.isOpenString)
     }
+    
+    func testShouldBe1FretWideWithOnePosition() {
+        let fingerPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.a).getFret(atFretNum: 3)),
+                ]
+        )
+        
+        assert(1 == fingerPattern.fretWidth)
+    }
+    
+    func testShouldBe3FretsWideForCMajorChord() {
+        let fingerPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.a).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.d).getFret(atFretNum: 2)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.g).getFret(atFretNum: 0)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.b).getFret(atFretNum: 1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e2).getFret(atFretNum: 0))
+            ]
+        )
+        
+        assert(3 == fingerPattern.fretWidth)
+    }
+    
+    func testShouldBe0FretsWideWhenAllStringsMuted() {
+        let fingerPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e1)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.a)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.d)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.g)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.b)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e2))
+            ]
+        )
+        
+        assert(0 == fingerPattern.fretWidth)
+    }
 }

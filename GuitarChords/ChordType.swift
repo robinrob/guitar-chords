@@ -17,7 +17,7 @@ enum ChordType: String {
     case aMajor = "A Major"
     case bMajor = "B Major"
     
-    func getAllMajor() -> [ChordType] {
+    static func getAllMajor() -> [ChordType] {
         return [
             ChordType.cMajor,
             ChordType.dMajor,
@@ -27,5 +27,9 @@ enum ChordType: String {
             ChordType.aMajor,
             ChordType.bMajor
         ]
+    }
+    
+    static func getAllMajorNames() -> [String] {
+        return self.getAllMajor().map {$0.rawValue}
     }
 }

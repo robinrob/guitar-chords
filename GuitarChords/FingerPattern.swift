@@ -11,6 +11,16 @@ import Foundation
 class FingerPattern: CustomStringConvertible, Equatable {
     let fingerPositions: [FingerPosition]
     let description: String
+    var fretWidth: Int {
+        get {
+            let fretNums = self.fingerPositions.filter({$0.fretNum != nil && $0.fretNum! > 0}).map {$0.fretNum!}
+            if fretNums.count > 0 {
+                return (fretNums.max()! - fretNums.min()!) + 1
+            } else {
+                return 0
+            }
+        }
+    }
     
     init(fingerPositions: [FingerPosition]) {
         self.fingerPositions = fingerPositions
@@ -24,7 +34,7 @@ class FingerPattern: CustomStringConvertible, Equatable {
                 fretString = "muted"
             }
             
-            strs.append("\(fretString) on \(pos.guitarString.type) string")
+            strs.append("\(fretString) on \(pos.guitarString.type.rawValue) string")
         }
         self.description = strs.joined(separator: ", ")
     }

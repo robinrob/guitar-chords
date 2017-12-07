@@ -19,34 +19,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var g: [FretButton]!
     @IBOutlet var b: [FretButton]!
     @IBOutlet var e2: [FretButton]!
+
+    let guitar = Guitar()
+    var chords = ChordType.getAllMajorNames()
     
-    var chords = [
-        "C Major",
-        "D Major",
-        "E Major",
-        "F Major",
-        "G Major",
-        "A Major",
-        "B Major",
-        "C Major"
-    ]
+    var variations: [String] = []
     
-    var variations = [
-        "One"
-    ]
-    
-    var strings: [String: [FretButton]] {
+    var stringTypesToStringViews: [GuitarStringType: [FretButton]] {
         get {
             return [
-                "e1": e1,
-                "a": a,
-                "d": d,
-                "g": g,
-                "b": b,
-                "e2": e2
+                GuitarStringType.e1: e1,
+                GuitarStringType.a: a,
+                GuitarStringType.d: d,
+                GuitarStringType.g: g,
+                GuitarStringType.b: b,
+                GuitarStringType.e2: e2
             ]
         }
     }
+    
+    var chordVariationFingerPatterns: [String: FingerPattern] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +49,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         variationChoice.dataSource = self
         variationChoice.delegate = self
         
-        for stringName in strings.keys {
-            let string = strings[stringName]!
+        for stringName in stringTypesToStringViews.keys {
+            let string = stringTypesToStringViews[stringName]!
             
             for (fretIndex, fret) in string.enumerated() {
                 fret.addTarget(self, action: #selector(pressFret(_:)), for: .touchUpInside)
@@ -66,8 +58,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-//        let fingerPatterns = Guitar(withFrets: 14).findAllFingerPatterns(ofChordType: ChordType.cMajor)
-//        print(fingerPatterns)
+        updateVariationsFor(chordName: chords[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,9 +73,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
         case chordChoice:
-            return chords.count
+            return self.chords.count
         case variationChoice:
-            return 1
+            return self.variations.count
         default:
             return 1
         }
@@ -95,13 +86,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     forComponent component: Int) -> String? {
         switch pickerView {
         case chordChoice:
-            return chords[row]
+            return self.chords[row]
         case variationChoice:
-            return variations[row]
+            return self.variations[row]
         default:
             return nil
         }
-        
     }
     
     func pickerView(_ pickerView: UIPickerView,
@@ -109,35 +99,52 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                              inComponent component: Int) {
         switch pickerView {
         case chordChoice:
-            displayChord(chords[row])
+            updateVariationsFor(chordName: chords[row])
         case variationChoice:
-            print("Chose variation: \(variations[row])")
+            let varationName = variations[row]
+            displayFingerPattern(self.chordVariationFingerPatterns[varationName]!)
         default:
             print("Unrecognised picker view choice")
         }
     }
-
-    func displayChord(_ name: String) {
-        switch name {
-        case "C Major":
-            displayCChord()
-        case "B Major", "D Major", "E Major", "F Major", "G Major", "A Major":
-            clearAllStrings()
-            for string in strings.values {
-                for fret in string {
-                    fret.activate()
-                }
-            }
-        default:
-            print("Unrecognised chord:")
+    
+    func updateVariationsFor(chordName: String) {
+        let fingerPatterns = self.guitar.findAllFingerPatterns(ofChordType: ChordType(rawValue: chordName)!, withMaxFretWidth: 3)
+        
+        self.chordVariationFingerPatterns = [:]
+        for (variationNum, fingerPattern) in fingerPatterns.enumerated() {
+            self.chordVariationFingerPatterns[("Variation \(variationNum)")] = fingerPattern
+            self.variations = Array<String>(self.chordVariationFingerPatterns.keys).sorted()
+        }
+        
+        if fingerPatterns.count > 0 {
+            variationChoice.reloadAllComponents()
+            variationChoice.selectRow(0, inComponent: 0, animated: false)
+            displayFingerPattern(fingerPatterns[0])
+        } else {
+            variations = ["No options"]
         }
     }
 
-    func displayCChord() {
+    func displayFingerPattern(_ fingerPattern: FingerPattern) {
         clearAllStrings()
-        selectFret(a, 3)
-        selectFret(d, 2)
-        selectFret(b, 1)
+        
+        print("fingerPattern: \(fingerPattern)")
+        for fingerPosition in fingerPattern.fingerPositions {
+            let stringView = stringTypesToStringViews[fingerPosition.guitarString.type]!
+            
+            if fingerPosition.isMuted {
+                muteStringView(stringView)
+            } else if !fingerPosition.isOpenString && fingerPosition.fretNum! > 0 {
+                selectFret(stringView, fingerPosition.fretNum!)
+            }
+        }
+    }
+    
+    func muteStringView(_ stringView: [FretButton]) {
+        for fret in stringView {
+            fret.backgroundColor = UIColor.gray
+        }
     }
 
     func selectFret(_ string: [FretButton], _ fretNum: Int) {
@@ -145,7 +152,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func clearAllStrings() {
-        for string in strings.values {
+        for string in stringTypesToStringViews.values {
             clearString(string)
         }
     }
