@@ -10,11 +10,13 @@ import XCTest
 @testable import GuitarChords
 
 class TestGuitarFret: XCTestCase {
-    let guitar = Guitar()
+    var guitar: Guitar?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        self.guitar = Guitar()
     }
     
     override func tearDown() {
@@ -22,48 +24,84 @@ class TestGuitarFret: XCTestCase {
         super.tearDown()
     }
     
-    func testShouldReturnBaseNoteFor0thFret() {
-        let e1String = Mocks.createE1String()
-        let fret = GuitarFret(onString: e1String, fretNum: 0)
-        
-        let note = fret.note
-        
-        assert(note == e1String.baseNote)
-    }
-    
-    func testShouldReturnNote1SemitoneAboveBaseNoteFor1stFret() {
-        let e1String = Mocks.createE1String()
-        let fret = GuitarFret(onString: e1String, fretNum: 1)
-        
-        let note = fret.note
-        
-        assert(note == Note.f)
-    }
-    
-    func testShouldReturnNote5SemitonesAboveBaseNoteFor5thtFret() {
-        let e1String = Mocks.createE1String()
-        let fret = GuitarFret(onString: e1String, fretNum: 5)
-        
-        let note = fret.note
-        
-        assert(note == Note.a)
-    }
-    
-    func testShouldReturnNote1OctaveAboveBaseNoteFor12thtFret() {
-        let e1String = Mocks.createE1String()
-        let fret = GuitarFret(onString: e1String, fretNum: 12)
+    func test0thFretOfEStringShouldBeE() {
+        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let fret = string.getFret(atFretNum: 0)
         
         let note = fret.note
         
         assert(note == Note.e)
     }
     
-    func testShouldReturnCorrectNoteFor14thtFret() {
-        let e1String = Mocks.createE1String()
-        let fret = GuitarFret(onString: e1String, fretNum: 14)
+    func test1stFretOfEStringShouldBeF() {
+        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let fret = string.getFret(atFretNum: 1)
+        
+        let note = fret.note
+        
+        assert(note == Note.f)
+    }
+    
+    func test5thFretOfEStringShouldBeA() {
+        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let fret = string.getFret(atFretNum: 5)
+        
+        let note = fret.note
+        
+        assert(note == Note.a)
+    }
+    
+    func test12thFretOfEStringShouldBeE() {
+        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let fret = string.getFret(atFretNum: 12)
+        
+        let note = fret.note
+        
+        assert(note == Note.e)
+    }
+    
+    func test14thFretOfEStringShouldBeFSharp() {
+        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let fret = string.getFret(atFretNum: 14)
         
         let note = fret.note
         
         assert(note == Note.fSharp)
+    }
+    
+    func test2ndFretOfAStringShouldBeB() {
+        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let fret = string.getFret(atFretNum: 2)
+        
+        let note = fret.note
+        
+        assert(note == Note.b)
+    }
+    
+    func test3rdFretOfAStringShouldBeC() {
+        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let fret = string.getFret(atFretNum: 3)
+        
+        let note = fret.note
+        
+        assert(note == Note.c)
+    }
+    
+    func test1stFretOfBStringShouldBeC() {
+        let string = self.guitar!.getString(byType: GuitarStringType.b)
+        let fret = string.getFret(atFretNum: 1)
+        
+        let note = fret.note
+        
+        assert(note == Note.c)
+    }
+    
+    func testShouldReturnString() {
+        let guitar = self.guitar!
+        let fret = guitar.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)
+        
+        let fretString = fret.string
+        
+        assert(GuitarStringType.e1 == fretString.type)
     }
 }

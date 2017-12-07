@@ -9,7 +9,7 @@
 import XCTest
 @testable import GuitarChords
 
-class ChordTests: XCTestCase {
+class TestChord: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -69,11 +69,46 @@ class ChordTests: XCTestCase {
         assert(notes == [Note.a, Note.cSharp, Note.e])
     }
     
-    func TestChord() {
+    func testBMajorChord() {
         let chord = Chord(ofType: ChordType.bMajor)
         
         let notes = chord.notes
         
         assert(notes == [Note.b, Note.dSharp, Note.fSharp])
+    }
+    
+    func testBChordsShouldBeEqualWithSameNotes() {
+        let chord1 = Chord(ofType: ChordType.bMajor)
+        let chord2 = Chord(withNotes: [Note.b, Note.dSharp, Note.fSharp])
+        
+        assert(chord1 == chord2)
+    }
+    
+    func testCChordsShouldBeEqualWithSameNotes() {
+        let chord1 = Chord(ofType: ChordType.cMajor)
+        let chord2 = Chord(withNotes: [Note.c, Note.e, Note.g])
+        
+        assert(chord1 == chord2)
+    }
+    
+    func testCChordsShouldBeEqualWhenOneChordHasMoreNotes() {
+        let chord1 = Chord(ofType: ChordType.cMajor)
+        let chord2 = Chord(withNotes: [Note.c, Note.e, Note.g, Note.c, Note.e])
+        
+        assert(chord1 == chord2)
+    }
+    
+    func testBChordsShouldBeEqualWhenOneChordHasMoreNotes() {
+        let chord1 = Chord(ofType: ChordType.bMajor)
+        let chord2 = Chord(withNotes: [Note.b, Note.dSharp, Note.fSharp, Note.dSharp, Note.b])
+        
+        assert(chord1 == chord2)
+    }
+    
+    func testChordsShouldNotBeEqualWhenNotesAreDifferent() {
+        let chord1 = Chord(ofType: ChordType.bMajor)
+        let chord2 = Chord(withNotes: [Note.b, Note.d, Note.fSharp])
+        
+        assert(chord1 != chord2)
     }
 }

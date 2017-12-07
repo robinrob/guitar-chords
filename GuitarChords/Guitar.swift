@@ -23,24 +23,40 @@ class Guitar {
     }
     
     func findAllFingerPatterns(ofChordType chordType: ChordType, withFretWidth: Int = 4) -> [FingerPattern] {
+        let chord = Chord(ofType: chordType)
         var fingerPositionsByString: [[FingerPosition]] = []
-        for string in strings {
+        for string in self.strings {
             var fingerPositions: [FingerPosition] = []
-            for fretNum in 1...4 {
-                fingerPositions.append(FingerPosition(atFret: string.getFret(atFretNum: fretNum)))
+            for fretNum in 0...3 {
+                let fret = string.getFret(atFretNum: fretNum)
+                if chord.notes.contains(fret.note) {
+                    fingerPositions.append(FingerPosition(atFret: fret))
+                }
             }
             fingerPositionsByString.append(fingerPositions)
         }
         
-        let fingerPositionPossibilities = ArrayMultiplier<FingerPosition>().multiply(fingerPositionsByString)
+        let fingerPositionsPossibilities = ArrayMultiplier<FingerPosition>().multiply(fingerPositionsByString)
         
         var fingerPatterns: [FingerPattern] = []
-        for fingerPositionPossibility in fingerPositionPossibilities {
-            let fingerPattern = FingerPattern(fingerPositions: fingerPositionPossibility)
-            if fingerPattern.isChord(chordType: chordType) {
+        for fingerPositionsPossibility in fingerPositionsPossibilities {
+            for pos in fingerPositionsPossibility {
+                if (pos.note == chord.baseNote) {
+                    break
+                } else if pos.note != chord.baseNote {
+                    pos.mute()
+                }
+            }
+            
+            let fingerPattern = FingerPattern(fingerPositions: fingerPositionsPossibility)
+            if fingerPattern.isChord(chordType: chordType) && !fingerPatterns.contains(fingerPattern) {
                 fingerPatterns.append(fingerPattern)
             }
         }
         return fingerPatterns
+    }
+    
+    func getString(byType type: GuitarStringType) -> GuitarString {
+        return self.strings.filter({ $0.type == type }).first!
     }
 }

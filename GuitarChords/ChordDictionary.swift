@@ -25,6 +25,10 @@ struct ChordDictionary {
         return ChordDictionary.majorChords
     }
     
+    static func getChord(ofType type: ChordType) -> Chord {
+        return chords[type]!
+    }
+    
     static func getNotesFor(chordType: ChordType) -> [Note] {
         return ChordDictionary.chords[chordType]!.notes
     }

@@ -10,16 +10,21 @@ import Foundation
 
 
 class GuitarFret {
-    weak var string: GuitarString?
+    private weak var guitarString: GuitarString?
     let fretNum: Int
     var note: Note {
         get {
-            return self.string!.baseNote.advanced(bySemiTones: self.fretNum)
+            return self.string.baseNote.advanced(bySemiTones: self.fretNum)
         }
     }
     
+    var string: GuitarString {
+        return self.guitarString!
+    }
+    
     init(onString string: GuitarString, fretNum: Int) {
-        self.string = string
+        print("self.guitarString: \(self.guitarString)")
+        self.guitarString = string
         self.fretNum = fretNum
     }
 }

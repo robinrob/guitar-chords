@@ -8,19 +8,53 @@
 
 import Foundation
 
-class FingerPosition {
+class FingerPosition: Equatable {
     let fret: GuitarFret?
+    private let string: GuitarString?
+    private var muted = false
     var isMuted: Bool {
-        return self.fret == nil
+        return self.fret == nil || self.muted
     }
     var isOpenString: Bool {
-        return self.fret!.fretNum == 0
+        return !self.isMuted && self.fret!.fretNum == 0
     }
-    var note: Note {
-        return self.fret!.note
+    var note: Note? {
+        if self.isMuted {
+            return nil
+        } else {
+            return self.fret!.note
+        }
+    }
+    var guitarString: GuitarString {
+        if self.fret == nil {
+            return self.string!
+        } else {
+            return self.fret!.string
+        }
+    }
+    var fretNum: Int? {
+        if self.fret == nil {
+            return nil
+        } else {
+            return self.fret!.fretNum
+        }
     }
     
-    init(atFret fret: GuitarFret?) {
+    init(atFret fret: GuitarFret) {
         self.fret = fret
+        self.string = nil
+    }
+    
+    init(mutingString string: GuitarString) {
+        self.string = string
+        self.fret = nil
+    }
+    
+    func mute() {
+        self.muted = true
+    }
+    
+    static func ==(lhs: FingerPosition, rhs: FingerPosition) -> Bool {
+        return (lhs.guitarString.type == rhs.guitarString.type) && (lhs.fretNum == rhs.fretNum)
     }
 }

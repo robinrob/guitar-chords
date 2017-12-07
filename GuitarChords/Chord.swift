@@ -11,6 +11,9 @@ import Foundation
 
 struct Chord: Equatable {
     let notes: [Note]
+    var baseNote: Note {
+        return self.notes[0]
+    }
     
     init(withNotes notes: [Note]) {
         self.notes = notes
@@ -21,6 +24,9 @@ struct Chord: Equatable {
     }
     
     static func == (lhs: Chord, rhs: Chord) -> Bool {
-        return lhs.notes == rhs.notes
+        let arr1 = Set(lhs.notes)
+        let arr2 = Set(rhs.notes)
+        
+        return arr1 == arr2
     }
 }

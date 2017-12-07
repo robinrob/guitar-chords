@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GuitarString {
+class GuitarString: Equatable {
     weak var guitar: Guitar?
     var type: GuitarStringType
     var baseNote: Note {
@@ -31,6 +31,10 @@ class GuitarString {
     
     func getFret(atFretNum fretNum: Int) -> GuitarFret {
         return self.frets[fretNum]
+    }
+    
+    static func == (lhs: GuitarString, rhs: GuitarString) -> Bool {
+        return lhs.type == rhs.type
     }
 }
 

@@ -39,6 +39,14 @@ class TestNote: XCTestCase {
         assert(note == Note.cSharp)
     }
     
+    func testShouldAdvanceNoteBy1SemitoneFromBbackToC() {
+        var note = Note.b
+        
+        note = note.advanced(bySemiTones: 1)
+        
+        assert(note == Note.c)
+    }
+    
     func testShouldAdvanceNoteBy5Semitones() {
         var note = Note.c
         

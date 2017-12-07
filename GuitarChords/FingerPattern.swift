@@ -8,33 +8,49 @@
 
 import Foundation
 
-class FingerPattern: CustomStringConvertible {
+class FingerPattern: CustomStringConvertible, Equatable {
     let fingerPositions: [FingerPosition]
     let description: String
     
     init(fingerPositions: [FingerPosition]) {
         self.fingerPositions = fingerPositions
         
-        var str = ""
+        var strs: [String] = []
         for pos in self.fingerPositions {
-            str += "fret \(pos.fret!.fretNum) on string \(pos.fret!.string!.type)"
+            let fretString: String
+            if !pos.isMuted {
+                fretString = "fret \(pos.fret!.fretNum)"
+            } else {
+                fretString = "muted"
+            }
+            
+            strs.append("\(fretString) on \(pos.guitarString.type) string")
         }
-        self.description = str
+        self.description = strs.joined(separator: ", ")
     }
     
     var notes: [Note] {
-        return fingerPositions.reduce([], {
-            res, pos in
-            if !pos.isMuted {
-                return res + [pos.note]
-            } else {
-                return res
-            }
-        })
+        return fingerPositions.filter({ $0.isMuted == false }).map({ $0.note! })
     }
     
     func isChord(chordType: ChordType) -> Bool {
-        let chordNotes = ChordDictionary.getNotesFor(chordType: chordType)
-        return NSSet(array: chordNotes).isSubset(of: Set(self.notes))
+        return Chord(withNotes: self.notes) == ChordDictionary.getChord(ofType: chordType)
+    }
+    
+    func getFingerPosition(byStringType stringType: GuitarStringType) -> FingerPosition {
+        return self.fingerPositions.filter( {$0.guitarString.type == stringType })[0]
+    }
+    
+    static func ==(lhs: FingerPattern, rhs: FingerPattern) -> Bool {
+        return lhs.description == rhs.description
+//        if lhs.fingerPositions.count == rhs.fingerPositions.count {
+//            for (index, _) in lhs.fingerPositions.enumerated() {
+//                if rhs.fingerPositions[index] != lhs.fingerPositions[index] {
+//                    return false
+//                }
+//            }
+//            return true
+//        }
+//        return false
     }
 }
