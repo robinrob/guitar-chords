@@ -51,7 +51,7 @@ class FingerPattern: CustomStringConvertible, Equatable {
         self.fingerPositions = fingerPositions
     }
     
-    func isChord(chordType: ChordType) -> Bool {
+    func isChord(_ chordType: ChordType) -> Bool {
         return Chord(withNotes: self.notes) == ChordDictionary.getChord(ofType: chordType)
     }
     
@@ -63,6 +63,26 @@ class FingerPattern: CustomStringConvertible, Equatable {
         self.fingerPositions[positionNum].mute()
     }
     
+    func unmutePositionIfOnFret(positionNum: Int) {
+        self.fingerPositions[positionNum].unmuteIfFretPosition()
+    }
+    
+    func hasMutedFretPositions() -> Bool {
+        return self.fingerPositions.filter({$0.fret != nil && $0.isMuted}).count > 0
+    }
+    
+    func getUnMutedPattern() -> FingerPattern {
+        let newPattern = FingerPattern(fingerPositions: self.fingerPositions)
+        for (index, _) in newPattern.fingerPositions.enumerated() {
+            newPattern.unmutePositionIfOnFret(positionNum: index)
+        }
+        return newPattern
+    }
+    
+    func getMutedPositions() -> [FingerPosition] {
+        return self.fingerPositions.filter({$0.isMuted})
+    }
+
     static func ==(lhs: FingerPattern, rhs: FingerPattern) -> Bool {
         return lhs.description == rhs.description
 //        if lhs.fingerPositions.count == rhs.fingerPositions.count {

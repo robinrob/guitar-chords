@@ -54,6 +54,12 @@ struct FingerPosition: Equatable {
         self.muted = true
     }
     
+    mutating func unmuteIfFretPosition() {
+        if self.fret != nil {
+            self.muted = false
+        }
+    }
+    
     static func ==(lhs: FingerPosition, rhs: FingerPosition) -> Bool {
         return (lhs.guitarString.type == rhs.guitarString.type) && (lhs.fretNum == rhs.fretNum)
     }

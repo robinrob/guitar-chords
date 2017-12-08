@@ -10,10 +10,11 @@ import Foundation
 
 
 class Guitar {
-    var numFrets: Int
+    let numFrets: Int
     var strings: [GuitarString]
+    static var defaultNumFrets = 14
     
-    init(withNumFrets numFrets: Int = 14) {
+    init(withNumFrets numFrets: Int = Guitar.defaultNumFrets) {
         self.numFrets = numFrets
     
         self.strings = []
@@ -22,11 +23,15 @@ class Guitar {
         }
     }
     
+    func getString(byType type: GuitarStringType) -> GuitarString {
+        return self.strings.filter({ $0.type == type }).first!
+    }
+    
     func findAllFingerPatterns(ofChordType chordType: ChordType, withMaxFretWidth fretWidth: Int = 4) -> [FingerPattern] {
         return self.findFingerPatterns(ofChordType: chordType, withFretWidth: fretWidth, fromFret: 0, toFret: self.numFrets)
     }
     
-    func findFingerPatterns(ofChordType chordType: ChordType, withFretWidth fretWidth: Int = 4, fromFret: Int = 0, toFret: Int) -> [FingerPattern] {
+    func findFingerPatterns(ofChordType chordType: ChordType, withFretWidth fretWidth: Int = 4, fromFret: Int = 0, toFret: Int = Guitar.defaultNumFrets) -> [FingerPattern] {
         var fretRanges: [(Int, Int)] = []
         for fretNum in fromFret...toFret - fretWidth {
             fretRanges.append((fretNum, fretNum + fretWidth))
@@ -71,14 +76,33 @@ class Guitar {
                 }
             }
 
-            if fingerPattern.notes.count >= 3 && fingerPattern.isChord(chordType: chordType) && !fingerPatterns.contains(fingerPattern) && fingerPattern.fretWidth <= fretWidth {
+            if !fingerPatterns.contains(fingerPattern) && self.fingerPatternSatisfiesCrietia(fingerPattern: fingerPattern, chordType: chordType, fretWidth: fretWidth) {
                 fingerPatterns.append(fingerPattern)
             }
         }
         return fingerPatterns
     }
     
-    func getString(byType type: GuitarStringType) -> GuitarString {
-        return self.strings.filter({ $0.type == type }).first!
+    private func fingerPatternSatisfiesCrietia(fingerPattern: FingerPattern, chordType: ChordType, fretWidth: Int) -> Bool {
+        var matches = fingerPattern.isChord(chordType) && fingerPattern.notes.count >= 3 && fingerPattern.fretWidth <= fretWidth && !self.fingerPatternHasMutedStringsInMiddle(fingerPattern: fingerPattern)
+        if fingerPattern.hasMutedFretPositions() {
+            matches = matches && !fingerPattern.getUnMutedPattern().isChord(chordType)
+        }
+        return matches
+    }
+    
+    private func fingerPatternHasMutedStringsInMiddle(fingerPattern: FingerPattern) -> Bool {
+        var mutedStringIndices: [Int] = []
+        for (index, pos) in fingerPattern.fingerPositions.enumerated() {
+            if pos.isMuted {
+                mutedStringIndices.append(index)
+            }
+        }
+        
+        if mutedStringIndices.count > 0 {
+            return !Func.isSequence(ints: mutedStringIndices) || mutedStringIndices.first! > 0
+        } else {
+            return false
+        }
     }
 }

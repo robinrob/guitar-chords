@@ -49,7 +49,7 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testShouldBeMutedAfterManuallyMuted() {
-        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        var pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
         pos.mute()
         
         let isMuted = pos.isMuted

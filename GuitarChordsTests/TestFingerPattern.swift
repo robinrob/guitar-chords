@@ -88,7 +88,7 @@ class TestFingerPattern: XCTestCase {
             ]
         )
         
-        let isChord = fingerPattern.isChord(chordType: ChordType.cMajor)
+        let isChord = fingerPattern.isChord(ChordType.cMajor)
         
         assert(isChord)
     }
@@ -105,7 +105,7 @@ class TestFingerPattern: XCTestCase {
             ]
         )
         
-        let isChord = fingerPattern.isChord(chordType: ChordType.cMajor)
+        let isChord = fingerPattern.isChord(ChordType.cMajor)
         
         assert(!isChord)
     }
@@ -173,5 +173,29 @@ class TestFingerPattern: XCTestCase {
         )
         
         assert(0 == fingerPattern.fretWidth)
+    }
+    
+    func testShouldUnmuteMutedFretPositions() {
+        let aMajorPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.a).getFret(atFretNum: 12)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.d).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.g).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.b).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e2).getFret(atFretNum: 12))
+            ]
+        )
+        assert(aMajorPattern.getMutedPositions().count == 1)
+        assert(aMajorPattern.isChord(ChordType.aMajor))
+        
+        aMajorPattern.mutePosition(positionNum: 1)
+        aMajorPattern.mutePosition(positionNum: 2)
+        assert(aMajorPattern.getMutedPositions().count == 3)
+        assert(aMajorPattern.isChord(ChordType.aMajor))
+        
+        let unmutedAMajor = aMajorPattern.getUnMutedPattern()
+        assert(unmutedAMajor.getMutedPositions().count == 1)
+        assert(unmutedAMajor.isChord(ChordType.aMajor))
     }
 }

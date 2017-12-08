@@ -52,9 +52,9 @@ class TestGuitar: XCTestCase {
         let patterns = self.guitar!.findFingerPatterns(ofChordType: ChordType.cMajor, withFretWidth: 3, fromFret: 0, toFret: 3)
         
         assert(patterns.count == 2)
-        
+    
         for pattern in patterns {
-            assert(pattern.isChord(chordType: ChordType.cMajor))
+            assert(pattern.isChord(ChordType.cMajor))
         }
         
         var pattern = patterns[0]
@@ -80,7 +80,7 @@ class TestGuitar: XCTestCase {
         assert(patterns.count == 4)
         
         for pattern in patterns {
-            assert(pattern.isChord(chordType: ChordType.cMajor))
+            assert(pattern.isChord(itChordType.cMajor))
         }
     }
 }
