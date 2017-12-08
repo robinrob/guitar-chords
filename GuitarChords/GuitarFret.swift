@@ -23,7 +23,6 @@ class GuitarFret {
     }
     
     init(onString string: GuitarString, fretNum: Int) {
-        print("self.guitarString: \(self.guitarString)")
         self.guitarString = string
         self.fretNum = fretNum
     }

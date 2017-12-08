@@ -111,4 +111,10 @@ class TestChord: XCTestCase {
         
         assert(chord1 != chord2)
     }
+    
+    func testBaseNoteShouldBeAForAMinorChord() {
+        let chord = Chord(ofType: ChordType.aMinor)
+        
+        assert(Note.a == chord.baseNote)
+    }
 }

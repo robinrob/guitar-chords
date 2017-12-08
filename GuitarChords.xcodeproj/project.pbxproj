@@ -15,6 +15,9 @@
 		0003C9671FD1B8ED00EB896B /* FingerPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9661FD1B8ED00EB896B /* FingerPattern.swift */; };
 		0003C9691FD1B90C00EB896B /* FingerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0003C9681FD1B90C00EB896B /* FingerPosition.swift */; };
 		002B59911FD17A2200287ABA /* FretButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002B59901FD17A2200287ABA /* FretButton.swift */; };
+		005E8F011FDAA4F4006A85D2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E8F001FDAA4F4006A85D2 /* Extensions.swift */; };
+		005E8F031FDAA8F4006A85D2 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E8F021FDAA8F4006A85D2 /* TestExtensions.swift */; };
+		005E8F071FDAAA45006A85D2 /* TestChordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E8F061FDAAA45006A85D2 /* TestChordDictionary.swift */; };
 		0069AAB61FBDD25D005B3EB1 /* GuitarChordsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */; };
 		0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABB1FBDD9DB005B3EB1 /* Note.swift */; };
 		0069AABE1FBDD9F6005B3EB1 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069AABD1FBDD9F6005B3EB1 /* Chord.swift */; };
@@ -64,6 +67,9 @@
 		0003C9661FD1B8ED00EB896B /* FingerPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPattern.swift; sourceTree = "<group>"; };
 		0003C9681FD1B90C00EB896B /* FingerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPosition.swift; sourceTree = "<group>"; };
 		002B59901FD17A2200287ABA /* FretButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretButton.swift; sourceTree = "<group>"; };
+		005E8F001FDAA4F4006A85D2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		005E8F021FDAA8F4006A85D2 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		005E8F061FDAAA45006A85D2 /* TestChordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChordDictionary.swift; sourceTree = "<group>"; };
 		0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarChordsBrain.swift; sourceTree = "<group>"; };
 		0069AABB1FBDD9DB005B3EB1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		0069AABD1FBDD9F6005B3EB1 /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 				0069AAB51FBDD25D005B3EB1 /* GuitarChordsBrain.swift */,
 				0003C9561FD1A9C200EB896B /* GuitarString.swift */,
 				0003C95C1FD1AF5B00EB896B /* GuitarStringType.swift */,
+				005E8F001FDAA4F4006A85D2 /* Extensions.swift */,
 				002B59901FD17A2200287ABA /* FretButton.swift */,
 				006D0EE81FB5BE2B00E85F4D /* AppDelegate.swift */,
 				006D0EEA1FB5BE2B00E85F4D /* ViewController.swift */,
@@ -173,11 +180,13 @@
 				006D0EFD1FB5BE2B00E85F4D /* ChordTests.swift */,
 				006D0EFF1FB5BE2B00E85F4D /* Info.plist */,
 				00BAC6F11FD974B4000BD049 /* TestGuitar.swift */,
+				005E8F021FDAA8F4006A85D2 /* TestExtensions.swift */,
 				00CD428A1FD575F000D7269A /* TestNote.swift */,
 				00BAC6EF1FD9746C000BD049 /* TestData.swift */,
 				0087994C1FD5A823004D8BDD /* TestGuitarFret.swift */,
 				009BFC441FD8405200EF7C15 /* Mocks.swift */,
 				0087994E1FD5ABAE004D8BDD /* TestGuitarString.swift */,
+				005E8F061FDAAA45006A85D2 /* TestChordDictionary.swift */,
 			);
 			path = GuitarChordsTests;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 				0003C9611FD1B26100EB896B /* ChordType.swift in Sources */,
 				006D0EE91FB5BE2B00E85F4D /* AppDelegate.swift in Sources */,
 				00E5BBE41FD5658C00711311 /* ChordDictionary.swift in Sources */,
+				005E8F011FDAA4F4006A85D2 /* Extensions.swift in Sources */,
 				0003C9691FD1B90C00EB896B /* FingerPosition.swift in Sources */,
 				0069AABC1FBDD9DB005B3EB1 /* Note.swift in Sources */,
 				00E5BBE21FD5597000711311 /* ArrayMultiplier.swift in Sources */,
@@ -353,10 +363,12 @@
 				0087994D1FD5A823004D8BDD /* TestGuitarFret.swift in Sources */,
 				00FE99611FD5B56D0097705E /* TestFingerPattern.swift in Sources */,
 				009BFC451FD8405200EF7C15 /* Mocks.swift in Sources */,
+				005E8F071FDAAA45006A85D2 /* TestChordDictionary.swift in Sources */,
 				006D0EFE1FB5BE2B00E85F4D /* ChordTests.swift in Sources */,
 				00CD428B1FD575F000D7269A /* TestNote.swift in Sources */,
 				00E99E011FD858FE00D31BE4 /* FingerPattern.swift in Sources */,
 				00BAC6F21FD974B4000BD049 /* TestGuitar.swift in Sources */,
+				005E8F031FDAA8F4006A85D2 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

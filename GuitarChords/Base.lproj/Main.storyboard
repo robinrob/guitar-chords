@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -419,8 +419,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="chordChoice" destination="9pJ-i4-LTX" id="Iis-P8-Wt4"/>
-                        <outlet property="variationChoice" destination="Abp-xB-xVg" id="Kxg-wg-NkP"/>
+                        <outlet property="chordPicker" destination="9pJ-i4-LTX" id="Iis-P8-Wt4"/>
+                        <outlet property="chordVariationPicker" destination="Abp-xB-xVg" id="Kxg-wg-NkP"/>
                         <outletCollection property="e1" destination="FKZ-e3-0q8" collectionClass="NSMutableArray" id="uzu-S8-26h"/>
                         <outletCollection property="e1" destination="I5l-R0-lvw" collectionClass="NSMutableArray" id="eEu-LG-bXp"/>
                         <outletCollection property="e1" destination="zVU-q3-d1K" collectionClass="NSMutableArray" id="tOG-uP-6z6"/>

@@ -32,8 +32,25 @@ class TestFingerPosition: XCTestCase {
         assert(true == isOpen)
     }
     
+    func testShouldNotBeMutedByDefault() {
+        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        
+        let isMuted = pos.isMuted
+        
+        assert(false == isMuted)
+    }
+    
     func testShouldBeMutedWhenNoFretSet() {
         let pos = FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e1))
+        
+        let isMuted = pos.isMuted
+        
+        assert(true == isMuted)
+    }
+    
+    func testShouldBeMutedAfterManuallyMuted() {
+        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        pos.mute()
         
         let isMuted = pos.isMuted
         

@@ -26,7 +26,7 @@ class Guitar {
         return self.findFingerPatterns(ofChordType: chordType, withFretWidth: fretWidth, fromFret: 0, toFret: self.numFrets)
     }
     
-    private func findFingerPatterns(ofChordType chordType: ChordType, withFretWidth fretWidth: Int = 4, fromFret: Int = 0, toFret: Int = 4) -> [FingerPattern] {
+    func findFingerPatterns(ofChordType chordType: ChordType, withFretWidth fretWidth: Int = 4, fromFret: Int = 0, toFret: Int) -> [FingerPattern] {
         var fretRanges: [(Int, Int)] = []
         for fretNum in fromFret...toFret - fretWidth {
             fretRanges.append((fretNum, fretNum + fretWidth))
@@ -50,6 +50,8 @@ class Guitar {
                 let fret = string.getFret(atFretNum: fretNum)
                 if chord.notes.contains(fret.note) {
                     fingerPositions.append(FingerPosition(atFret: fret))
+                } else {
+                    fingerPositions.append(FingerPosition(mutingString: string))
                 }
             }
             fingerPositionsByString.append(fingerPositions)
@@ -59,16 +61,17 @@ class Guitar {
         
         var fingerPatterns: [FingerPattern] = []
         for fingerPositionsPossibility in fingerPositionsPossibilities {
-            for pos in fingerPositionsPossibility {
+            // Mute all strings before base note string
+            let fingerPattern = FingerPattern(fingerPositions: fingerPositionsPossibility)
+            for (index, pos) in fingerPattern.fingerPositions.enumerated() {
                 if (pos.note == chord.baseNote) {
                     break
                 } else if pos.note != chord.baseNote {
-                    pos.mute()
+                    fingerPattern.mutePosition(positionNum: index)
                 }
             }
-            
-            let fingerPattern = FingerPattern(fingerPositions: fingerPositionsPossibility)
-            if fingerPattern.isChord(chordType: chordType) && !fingerPatterns.contains(fingerPattern) && fingerPattern.fretWidth <= fretWidth {
+
+            if fingerPattern.notes.count >= 3 && fingerPattern.isChord(chordType: chordType) && !fingerPatterns.contains(fingerPattern) && fingerPattern.fretWidth <= fretWidth {
                 fingerPatterns.append(fingerPattern)
             }
         }

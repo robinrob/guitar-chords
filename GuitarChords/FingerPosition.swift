@@ -8,12 +8,12 @@
 
 import Foundation
 
-class FingerPosition: Equatable {
+struct FingerPosition: Equatable {
     let fret: GuitarFret?
     private let string: GuitarString?
     private var muted = false
     var isMuted: Bool {
-        return self.fret == nil || self.muted
+        return (self.fret == nil) || self.muted
     }
     var isOpenString: Bool {
         return !self.isMuted && self.fret!.fretNum == 0
@@ -50,7 +50,7 @@ class FingerPosition: Equatable {
         self.fret = nil
     }
     
-    func mute() {
+    mutating func mute() {
         self.muted = true
     }
     

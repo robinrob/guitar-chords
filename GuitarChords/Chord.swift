@@ -20,7 +20,7 @@ struct Chord: Equatable {
     }
 
     init(ofType chordType: ChordType) {
-        self.notes = ChordDictionary.chords[chordType]!.notes
+        self.notes = ChordDictionary.getNotesFor(chordType: chordType)
     }
     
     static func == (lhs: Chord, rhs: Chord) -> Bool {

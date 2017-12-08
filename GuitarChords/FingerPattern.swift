@@ -9,11 +9,10 @@
 import Foundation
 
 class FingerPattern: CustomStringConvertible, Equatable {
-    let fingerPositions: [FingerPosition]
-    let description: String
+    var fingerPositions: [FingerPosition]
     var fretWidth: Int {
         get {
-            let fretNums = self.fingerPositions.filter({$0.fretNum != nil && $0.fretNum! > 0}).map {$0.fretNum!}
+            let fretNums = self.fingerPositions.filter({$0.isMuted == false && $0.fretNum! > 0}).map {$0.fretNum!}
             if fretNums.count > 0 {
                 return (fretNums.max()! - fretNums.min()!) + 1
             } else {
@@ -22,25 +21,34 @@ class FingerPattern: CustomStringConvertible, Equatable {
         }
     }
     
-    init(fingerPositions: [FingerPosition]) {
-        self.fingerPositions = fingerPositions
-        
-        var strs: [String] = []
-        for pos in self.fingerPositions {
-            let fretString: String
-            if !pos.isMuted {
-                fretString = "fret \(pos.fret!.fretNum)"
-            } else {
-                fretString = "muted"
+    var description: String {
+        get {
+            var strs: [String] = []
+            for pos in self.fingerPositions {
+                let fretString: String
+                if !pos.isMuted {
+                    fretString = "fret \(pos.fret!.fretNum)"
+                } else {
+                    fretString = "muted"
+                }
+                
+                strs.append("\(fretString) on \(pos.guitarString.type.rawValue) string")
             }
-            
-            strs.append("\(fretString) on \(pos.guitarString.type.rawValue) string")
+            return strs.joined(separator: ", ")
         }
-        self.description = strs.joined(separator: ", ")
     }
     
     var notes: [Note] {
-        return fingerPositions.filter({ $0.isMuted == false }).map({ $0.note! })
+        return self.fingerPositions.filter({ $0.isMuted == false }).map({ $0.note! })
+    }
+    
+    var averageFretNum: Float {
+        let fretNums = self.fingerPositions.filter({$0.isMuted == false && $0.fretNum! > 0}).map {$0.fretNum!}
+        return Float(fretNums.reduce(0, +)) / Float(fretNums.count)
+    }
+    
+    init(fingerPositions: [FingerPosition]) {
+        self.fingerPositions = fingerPositions
     }
     
     func isChord(chordType: ChordType) -> Bool {
@@ -49,6 +57,10 @@ class FingerPattern: CustomStringConvertible, Equatable {
     
     func getFingerPosition(byStringType stringType: GuitarStringType) -> FingerPosition {
         return self.fingerPositions.filter( {$0.guitarString.type == stringType })[0]
+    }
+    
+    func mutePosition(positionNum: Int) {
+        self.fingerPositions[positionNum].mute()
     }
     
     static func ==(lhs: FingerPattern, rhs: FingerPattern) -> Bool {

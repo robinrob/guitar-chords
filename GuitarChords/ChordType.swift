@@ -10,26 +10,17 @@ import Foundation
 
 enum ChordType: String {
     case cMajor = "C Major"
+    case cMinor = "C Minor"
     case dMajor = "D Major"
+    case dMinor = "D Minor"
     case eMajor = "E Major"
+    case eMinor = "E Minor"
     case fMajor = "F Major"
+    case fMinor = "F Minor"
     case gMajor = "G Major"
+    case gMinor = "G Minor"
     case aMajor = "A Major"
+    case aMinor = "A Minor"
     case bMajor = "B Major"
-    
-    static func getAllMajor() -> [ChordType] {
-        return [
-            ChordType.cMajor,
-            ChordType.dMajor,
-            ChordType.eMajor,
-            ChordType.fMajor,
-            ChordType.gMajor,
-            ChordType.aMajor,
-            ChordType.bMajor
-        ]
-    }
-    
-    static func getAllMajorNames() -> [String] {
-        return self.getAllMajor().map {$0.rawValue}
-    }
+    case bMinor = "B Minor"
 }
