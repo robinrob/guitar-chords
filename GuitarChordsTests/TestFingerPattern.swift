@@ -198,4 +198,58 @@ class TestFingerPattern: XCTestCase {
         assert(unmutedAMajor.getMutedPositions().count == 1)
         assert(unmutedAMajor.isChord(ChordType.aMajor))
     }
+    
+    func testShouldBeSubsetOfOtherPattern() {
+        let patternA = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)),
+                ]
+        )
+        
+        let patternB = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.a)),
+                ]
+        )
+        
+        assert(patternB.isSubsetOf(patternA))
+    }
+    
+    func testShouldNotBeSubsetOfOtherPatternWhenEqual() {
+        let patternA = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)),
+                ]
+        )
+        
+        let patternB = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)),
+                ]
+        )
+        
+        assert(!patternB.isSubsetOf(patternA))
+    }
+    
+    func testShouldNotBeSubsetOfOtherPatternWhenHasDifferentFretPositions() {
+        let patternA = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)),
+                ]
+        )
+        
+        let patternB = FingerPattern(
+            fingerPositions: [
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 2)),
+                ]
+        )
+        
+        assert(!patternB.isSubsetOf(patternA))
+    }
 }

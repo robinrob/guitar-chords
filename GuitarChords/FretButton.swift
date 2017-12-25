@@ -36,7 +36,7 @@ import UIKit
         self.backgroundColor = FretButton.backgroundColors["default"]!
     }
     
-    func activate() {
+    func select() {
         self.backgroundColor = FretButton.backgroundColors["activated"]!
     }
 }

@@ -42,10 +42,23 @@ class FingerPattern: CustomStringConvertible, Equatable {
         return self.fingerPositions.filter({ $0.isMuted == false }).map({ $0.note! })
     }
     
-    var averageFretNum: Float {
-        let fretNums = self.fingerPositions.filter({$0.isMuted == false && $0.fretNum! > 0}).map {$0.fretNum!}
-        return Float(fretNums.reduce(0, +)) / Float(fretNums.count)
+    var fretNums: [Int] {
+        return self.fingerPositions.filter({$0.isMuted == false && $0.fretNum! > 0}).map {$0.fretNum!}
     }
+    
+    var averageFretNum: Float {
+        return Float(self.fretNums.reduce(0, +)) / Float(fretNums.count)
+    }
+    
+//    var stringFrets -> [StringFret] {
+//        var stringFrets: [StringFret] = []
+//        for pos in self.getUnMutedPositions() {
+//            if pos.fret != nil {
+//                stringFrets.append(StringFret(pos.fret!.string.type, pos.fret!.fretNum))
+//            }
+//        }
+//        return stringFrets
+//    }
     
     init(fingerPositions: [FingerPosition]) {
         self.fingerPositions = fingerPositions
@@ -82,7 +95,15 @@ class FingerPattern: CustomStringConvertible, Equatable {
     func getMutedPositions() -> [FingerPosition] {
         return self.fingerPositions.filter({$0.isMuted})
     }
-
+    
+    func getUnMutedPositions() -> [FingerPosition] {
+        return self.fingerPositions.filter({!$0.isMuted})
+    }
+    
+    func isSubsetOf(_ other: FingerPattern) -> Bool {
+        return self != other && Set<FingerPosition>(self.fingerPositions).isSubset(of: Set<FingerPosition>(other.fingerPositions))
+    }
+    
     static func ==(lhs: FingerPattern, rhs: FingerPattern) -> Bool {
         return lhs.description == rhs.description
 //        if lhs.fingerPositions.count == rhs.fingerPositions.count {

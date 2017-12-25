@@ -11,17 +11,16 @@ import Foundation
 class GuitarString: Equatable {
     weak var guitar: Guitar?
     var type: GuitarStringType
-    var baseNote: Note {
-        return self.type.baseNote
-    }
+    let baseNote: Note
     private var frets: [GuitarFret]
     var numFrets: Int {
         return self.guitar!.numFrets
     }
     
-    required init(onGuitar guitar: Guitar, ofType stringType: GuitarStringType) {
+    required init(onGuitar guitar: Guitar, ofType stringType: GuitarStringType, withBaseNote baseNote: Note) {
         self.guitar = guitar
         self.type = stringType
+        self.baseNote = baseNote
         
         self.frets = []
         for fretNum in 0...self.guitar!.numFrets {

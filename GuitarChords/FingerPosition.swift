@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct FingerPosition: Equatable {
+struct FingerPosition: Equatable, Hashable {
+    var hashValue: Int {
+        get {
+//            let val = self.guitarString.type.hashValue
+//            if self.fret != nil {
+//                val *= self.fret.hash
+//            }
+//            return val
+            return 1
+        }
+    }
+    
     let fret: GuitarFret?
     private let string: GuitarString?
     private var muted = false

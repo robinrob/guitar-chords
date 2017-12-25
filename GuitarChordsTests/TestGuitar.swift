@@ -80,7 +80,7 @@ class TestGuitar: XCTestCase {
         assert(patterns.count == 4)
         
         for pattern in patterns {
-            assert(pattern.isChord(itChordType.cMajor))
+            assert(pattern.isChord(ChordType.cMajor))
         }
     }
 }

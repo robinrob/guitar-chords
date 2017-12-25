@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var e2: StringView!
 
     
-    let guitar = Guitar()
+    let guitar = Guitar(withTuning: .dropD)
     
     var chordChoices = ChordDictionary.getAllChordNames().sorted()
     
@@ -32,12 +32,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var stringTypesToStringViews: [GuitarStringType: StringView] {
         get {
             return [
-                GuitarStringType.e1: e1,
-                GuitarStringType.a: a,
-                GuitarStringType.d: d,
-                GuitarStringType.g: g,
-                GuitarStringType.b: b,
-                GuitarStringType.e2: e2
+                GuitarStringType.one: e1,
+                GuitarStringType.two: a,
+                GuitarStringType.three: d,
+                GuitarStringType.four: g,
+                GuitarStringType.five: b,
+                GuitarStringType.six: e2
             ]
         }
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             let string = stringTypesToStringViews[stringName]!
             
             for (fretIndex, fret) in string.enumerated() {
-                fret.addTarget(self, action: #selector(pressFret(_:)), for: .touchUpInside)
+                fret.addTarget(self, action: #selector(selectFret(_:)), for: .touchUpInside)
                 fret.name = "\(stringName)\(fretIndex+1)"
             }
         }
@@ -141,17 +141,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func displayFingerPattern(_ fingerPattern: FingerPattern) {
-        clearAllStrings()
+        resetAllStrings()
         
-        print("fingerPattern: \(fingerPattern)")
         for fingerPosition in fingerPattern.fingerPositions {
             let stringView = stringTypesToStringViews[fingerPosition.guitarString.type]!
             
             if fingerPosition.isMuted {
                 muteStringView(stringView)
             } else if !fingerPosition.isOpenString && fingerPosition.fretNum! > 0 {
-                selectFretView(stringView, fingerPosition.fretNum!)
+                selectFretByFretNum(stringView, fingerPosition.fretNum!)
             }
+        }
+    }
+    
+    func resetAllStrings() {
+        for string in stringTypesToStringViews.values {
+            resetString(string)
+        }
+    }
+    
+    func resetString(_ string: StringView) {
+        for fret in string {
+            fret.reset()
         }
     }
     
@@ -160,31 +171,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             fret.backgroundColor = UIColor.gray
         }
     }
-
-    func selectFretView(_ string: StringView, _ fretNum: Int) {
-        string[fretNum-1].backgroundColor = UIColor.red
-    }
-
-    func clearAllStrings() {
-        for string in stringTypesToStringViews.values {
-            clearString(string)
-        }
-    }
-
-    func clearString(_ string: StringView) {
-        for fret in string {
-            fret.reset()
-        }
-    }
-
-    func initStrings() {
-        clearAllStrings()
+    
+    func selectFretByFretNum(_ string: StringView, _ fretNum: Int) {
+        self.selectFret(string[fretNum-1])
     }
     
-    
-    @objc func pressFret(_ sender: FretView) {
-        sender.activate()
-        print("sender.name: \(String(describing: sender.name!))")
+    @objc func selectFret(_ sender: FretView) {
+        sender.select()
     }
 }
 
