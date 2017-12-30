@@ -18,7 +18,9 @@ class Guitar {
         self.numFrets = numFrets
     
         self.strings = []
-        for (stringType, note) in tuning.notes {
+        for stringType in GuitarStringType.all {
+            let note = tuning.notes[stringType]!
+            
             self.strings.append(
                 GuitarString(onGuitar: self, ofType: stringType, withBaseNote: note)
             )
@@ -68,6 +70,7 @@ class Guitar {
     private func findFingerPatternsInFretRange(ofChordType chordType: ChordType, withFretWidth fretWidth: Int, fromFret: Int, toFret: Int) -> [FingerPattern] {
         let chord = Chord(ofType: chordType)
         var fingerPositionsByString: [[FingerPosition]] = []
+
         for string in self.strings {
             var fingerPositions: [FingerPosition] = []
             for fretNum in fromFret...toFret {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		007020041FF2B652005BAB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020031FF2B652005BAB60 /* AppDelegate.swift */; };
-		007020081FF2B652005BAB60 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020071FF2B652005BAB60 /* SecondViewController.swift */; };
+		007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020071FF2B652005BAB60 /* SettingsViewController.swift */; };
 		0070200B1FF2B652005BAB60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007020091FF2B652005BAB60 /* Main.storyboard */; };
 		0070200D1FF2B652005BAB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0070200C1FF2B652005BAB60 /* Assets.xcassets */; };
 		007020101FF2B652005BAB60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0070200E1FF2B652005BAB60 /* LaunchScreen.storyboard */; };
@@ -60,7 +60,7 @@
 /* Begin PBXFileReference section */
 		007020001FF2B652005BAB60 /* GuitarChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007020031FF2B652005BAB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		007020071FF2B652005BAB60 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		007020071FF2B652005BAB60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0070200A1FF2B652005BAB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0070200C1FF2B652005BAB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0070200F1FF2B652005BAB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				009915661FF3DA8A008C6AC5 /* StringViewController.swift */,
 				009915671FF3DA8A008C6AC5 /* ViewController.swift */,
 				007020031FF2B652005BAB60 /* AppDelegate.swift */,
-				007020071FF2B652005BAB60 /* SecondViewController.swift */,
+				007020071FF2B652005BAB60 /* SettingsViewController.swift */,
 				007020091FF2B652005BAB60 /* Main.storyboard */,
 				0070200C1FF2B652005BAB60 /* Assets.xcassets */,
 				0070200E1FF2B652005BAB60 /* LaunchScreen.storyboard */,
@@ -340,7 +340,7 @@
 				0099158A1FF3DA8E008C6AC5 /* FingerPosition.swift in Sources */,
 				0099158E1FF3DA8E008C6AC5 /* GuitarString.swift in Sources */,
 				009915871FF3DA8E008C6AC5 /* Guitar.swift in Sources */,
-				007020081FF2B652005BAB60 /* SecondViewController.swift in Sources */,
+				007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */,
 				009915951FF3DA8E008C6AC5 /* FretViewController.swift in Sources */,
 				009915901FF3DA8E008C6AC5 /* ChordType.swift in Sources */,
 				0099158C1FF3DA8E008C6AC5 /* ChordDictionary.swift in Sources */,

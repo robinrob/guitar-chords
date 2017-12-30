@@ -15,4 +15,17 @@ enum GuitarStringType: String, Hashable {
     case four = "Four"
     case five = "Five"
     case six = "Six"
+    
+    static var all: [GuitarStringType] {
+        get {
+            return [
+                .one,
+                .two,
+                .three,
+                .four,
+                .five,
+                .six
+            ]
+        }
+    }
 }

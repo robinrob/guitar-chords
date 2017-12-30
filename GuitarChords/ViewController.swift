@@ -15,15 +15,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var chordPicker: UIPickerView!
     @IBOutlet weak var chordVariationPicker: UIPickerView!
     
-    @IBOutlet var e1: StringView!
-    @IBOutlet var a: StringView!
-    @IBOutlet var d: StringView!
-    @IBOutlet var g: StringView!
-    @IBOutlet var b: StringView!
-    @IBOutlet var e2: StringView!
+    @IBOutlet var stringOneView: StringView!
+    @IBOutlet var stringTwoView: StringView!
+    @IBOutlet var stringThreeView: StringView!
+    @IBOutlet var stringFourView: StringView!
+    @IBOutlet var stringFiveView: StringView!
+    @IBOutlet var stringSixView: StringView!
 
     
-    let guitar = Guitar(withTuning: .dropD)
+    let guitar = Guitar()
     
     var chordChoices = ChordDictionary.getAllChordNames().sorted()
     
@@ -32,12 +32,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var stringTypesToStringViews: [GuitarStringType: StringView] {
         get {
             return [
-                GuitarStringType.one: e1,
-                GuitarStringType.two: a,
-                GuitarStringType.three: d,
-                GuitarStringType.four: g,
-                GuitarStringType.five: b,
-                GuitarStringType.six: e2
+                .one: stringOneView,
+                .two: stringTwoView,
+                .three: stringThreeView,
+                .four: stringFourView,
+                .five: stringFiveView,
+                .six: stringSixView
             ]
         }
     }
@@ -53,12 +53,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chordVariationPicker.dataSource = self
         chordVariationPicker.delegate = self
         
-        for stringName in stringTypesToStringViews.keys {
-            let string = stringTypesToStringViews[stringName]!
+        for stringType in GuitarStringType.all {
+            let string = stringTypesToStringViews[stringType]!
             
             for (fretIndex, fret) in string.enumerated() {
                 fret.addTarget(self, action: #selector(selectFret(_:)), for: .touchUpInside)
-                fret.name = "\(stringName)\(fretIndex+1)"
+                fret.name = "\(stringType.rawValue)\(fretIndex+1)"
             }
         }
         

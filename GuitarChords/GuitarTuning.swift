@@ -18,39 +18,39 @@ enum GuitarTuning {
         switch self {
         case .standard:
             return [
-                GuitarStringType.one: Note.e,
-                GuitarStringType.two: Note.a,
-                GuitarStringType.three: Note.d,
-                GuitarStringType.four: Note.g,
-                GuitarStringType.five: Note.b,
-                GuitarStringType.six: Note.e
+                .one: .e,
+                .two: .a,
+                .three: .d,
+                .four: .g,
+                .five: .b,
+                .six: .e
             ]
         case .dropD:
             return [
-                GuitarStringType.one: Note.d,
-                GuitarStringType.two: Note.a,
-                GuitarStringType.three: Note.d,
-                GuitarStringType.four: Note.g,
-                GuitarStringType.five: Note.b,
-                GuitarStringType.six: Note.d
+                .one: .d,
+                .two: .a,
+                .three: .d,
+                .four: .g,
+                .five: .b,
+                .six: .d
             ]
         case .dropC:
             return [
-                GuitarStringType.one: Note.c,
-                GuitarStringType.two: Note.g,
-                GuitarStringType.three: Note.c,
-                GuitarStringType.four: Note.f,
-                GuitarStringType.five: Note.a,
-                GuitarStringType.six: Note.d
+                .one: .c,
+                .two: .g,
+                .three: .c,
+                .four: .f,
+                .five: .a,
+                .six: .d
             ]
         case .dropB:
             return [
-                GuitarStringType.one: Note.b,
-                GuitarStringType.two: Note.fSharp,
-                GuitarStringType.three: Note.b,
-                GuitarStringType.four: Note.e,
-                GuitarStringType.five: Note.gSharp,
-                GuitarStringType.six: Note.cSharp
+                .one: .b,
+                .two: .fSharp,
+                .three: .b,
+                .four: .e,
+                .five: .gSharp,
+                .six: .cSharp
             ]
         }
     }
