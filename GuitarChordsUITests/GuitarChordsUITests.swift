@@ -2,8 +2,8 @@
 //  GuitarChordsUITests.swift
 //  GuitarChordsUITests
 //
-//  Created by  Robin Smith on 10/11/2017.
-//  Copyright © 2017  Robin Smith. All rights reserved.
+//  Created by Robin Smith on 26/12/2017.
+//  Copyright © 2017 Robin Smith. All rights reserved.
 //
 
 import XCTest
