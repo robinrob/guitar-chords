@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0060BF3E1FF881BA00AA84E3 /* StringHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */; };
 		007020041FF2B652005BAB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020031FF2B652005BAB60 /* AppDelegate.swift */; };
 		007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020071FF2B652005BAB60 /* SettingsViewController.swift */; };
 		0070200B1FF2B652005BAB60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007020091FF2B652005BAB60 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHeaderLabel.swift; sourceTree = "<group>"; };
 		007020001FF2B652005BAB60 /* GuitarChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007020031FF2B652005BAB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007020071FF2B652005BAB60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				0099156A1FF3DA8A008C6AC5 /* FingerPattern.swift */,
 				009915721FF3DA8C008C6AC5 /* FingerPosition.swift */,
 				0099156C1FF3DA8B008C6AC5 /* FretButton.swift */,
+				0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */,
 				009915691FF3DA8A008C6AC5 /* FretView.swift */,
 				0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */,
 				0099156B1FF3DA8A008C6AC5 /* Func.swift */,
@@ -340,6 +343,7 @@
 				0099158A1FF3DA8E008C6AC5 /* FingerPosition.swift in Sources */,
 				0099158E1FF3DA8E008C6AC5 /* GuitarString.swift in Sources */,
 				009915871FF3DA8E008C6AC5 /* Guitar.swift in Sources */,
+				0060BF3E1FF881BA00AA84E3 /* StringHeaderLabel.swift in Sources */,
 				007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */,
 				009915951FF3DA8E008C6AC5 /* FretViewController.swift in Sources */,
 				009915901FF3DA8E008C6AC5 /* ChordType.swift in Sources */,

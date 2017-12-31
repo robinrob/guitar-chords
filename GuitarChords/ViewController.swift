@@ -22,6 +22,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var stringFiveView: StringView!
     @IBOutlet var stringSixView: StringView!
 
+    @IBOutlet weak var stringOneHeader: UILabel!
+    @IBOutlet weak var stringTwoHeader: UILabel!
+    @IBOutlet weak var stringThreeHeader: UILabel!
+    @IBOutlet weak var stringFourHeader: UILabel!
+    @IBOutlet weak var stringFiveHeader: UILabel!
+    @IBOutlet weak var stringSixHeader: UILabel!
+    
     var guitar: Guitar?
     var guitarTuning: GuitarTuning = GuitarTuning.standard {
         didSet {
@@ -42,6 +49,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 .four: stringFourView,
                 .five: stringFiveView,
                 .six: stringSixView
+            ]
+        }
+    }
+    
+    var stringTypesToStringHeaders: [GuitarStringType: UILabel] {
+        get {
+            return [
+                .one: stringOneHeader,
+                .two: stringTwoHeader,
+                .three: stringThreeHeader,
+                .four: stringFourHeader,
+                .five: stringFiveHeader,
+                .six: stringSixHeader
             ]
         }
     }
@@ -117,9 +137,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.guitar = Guitar(withTuning: self.guitarTuning)
         
         for stringType in GuitarStringType.all {
-            let string = stringTypesToStringViews[stringType]!
+            let stringView = stringTypesToStringViews[stringType]!
             
-            for (fretIndex, fret) in string.enumerated() {
+            let string = self.guitar!.getString(byType: stringType)
+            let header = stringTypesToStringHeaders[stringType]!
+            header.text = string.baseNote.label
+            
+            for (fretIndex, fret) in stringView.enumerated() {
 //                fret.addTarget(self, action: #selector(selectFret(_:)), for: .touchUpInside)
                 fret.isEnabled = false
                 fret.setTitleColor(UIColor.black, for: .highlighted)
