@@ -11,11 +11,14 @@ import Foundation
 
 class Guitar {
     let numFrets: Int
+    let tuning: GuitarTuning
     var strings: [GuitarString]
+    
     static var defaultNumFrets = 14
     
     init(withTuning tuning: GuitarTuning = .standard, withNumFrets numFrets: Int = Guitar.defaultNumFrets) {
         self.numFrets = numFrets
+        self.tuning = tuning
     
         self.strings = []
         for stringType in GuitarStringType.all {

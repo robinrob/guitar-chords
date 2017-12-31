@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0007F1781FF9503400FA820F /* ChordSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007F1771FF9503400FA820F /* ChordSaver.swift */; };
+		0007F17A1FF9520400FA820F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007F1791FF9520400FA820F /* Database.swift */; };
 		0060BF3E1FF881BA00AA84E3 /* StringHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */; };
 		007020041FF2B652005BAB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020031FF2B652005BAB60 /* AppDelegate.swift */; };
 		007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020071FF2B652005BAB60 /* SettingsViewController.swift */; };
@@ -39,6 +41,8 @@
 		009915931FF3DA8E008C6AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */; };
 		009915941FF3DA8E008C6AC5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099157C1FF3DA8D008C6AC5 /* Note.swift */; };
 		009915951FF3DA8E008C6AC5 /* FretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */; };
+		00C00D661FF9254E00D4E710 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00C00D641FF9254E00D4E710 /* Data.xcdatamodeld */; };
+		00C00DAB1FF945B100D4E710 /* ChordFingerPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0007F1771FF9503400FA820F /* ChordSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordSaver.swift; sourceTree = "<group>"; };
+		0007F1791FF9520400FA820F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHeaderLabel.swift; sourceTree = "<group>"; };
 		007020001FF2B652005BAB60 /* GuitarChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007020031FF2B652005BAB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 		0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0099157C1FF3DA8D008C6AC5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretViewController.swift; sourceTree = "<group>"; };
+		00C00D651FF9254E00D4E710 /* FingerPatterns.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FingerPatterns.xcdatamodel; sourceTree = "<group>"; };
+		00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingerPattern.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,17 +155,21 @@
 		007020021FF2B652005BAB60 /* GuitarChords */ = {
 			isa = PBXGroup;
 			children = (
+				007020031FF2B652005BAB60 /* AppDelegate.swift */,
 				009915701FF3DA8B008C6AC5 /* ArrayMultiplier.swift */,
 				0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */,
+				00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */,
 				009915681FF3DA8A008C6AC5 /* Base.lproj */,
 				009915711FF3DA8B008C6AC5 /* Chord.swift */,
+				0007F1791FF9520400FA820F /* Database.swift */,
 				009915741FF3DA8C008C6AC5 /* ChordDictionary.swift */,
 				009915781FF3DA8D008C6AC5 /* ChordType.swift */,
+				00C00D641FF9254E00D4E710 /* Data.xcdatamodeld */,
 				009915771FF3DA8C008C6AC5 /* Extensions.swift */,
 				0099156A1FF3DA8A008C6AC5 /* FingerPattern.swift */,
 				009915721FF3DA8C008C6AC5 /* FingerPosition.swift */,
 				0099156C1FF3DA8B008C6AC5 /* FretButton.swift */,
-				0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */,
+				0007F1771FF9503400FA820F /* ChordSaver.swift */,
 				009915691FF3DA8A008C6AC5 /* FretView.swift */,
 				0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */,
 				0099156B1FF3DA8A008C6AC5 /* Func.swift */,
@@ -167,17 +179,17 @@
 				009915761FF3DA8C008C6AC5 /* GuitarString.swift */,
 				009915731FF3DA8C008C6AC5 /* GuitarStringType.swift */,
 				009915791FF3DA8D008C6AC5 /* GuitarTuning.swift */,
+				007020111FF2B652005BAB60 /* Info.plist */,
+				0070200E1FF2B652005BAB60 /* LaunchScreen.storyboard */,
+				007020091FF2B652005BAB60 /* Main.storyboard */,
 				0099157A1FF3DA8D008C6AC5 /* MajorChord.swift */,
 				0099157C1FF3DA8D008C6AC5 /* Note.swift */,
+				007020071FF2B652005BAB60 /* SettingsViewController.swift */,
 				0099156E1FF3DA8B008C6AC5 /* StringFret.swift */,
+				0060BF3D1FF881BA00AA84E3 /* StringHeaderLabel.swift */,
 				009915661FF3DA8A008C6AC5 /* StringViewController.swift */,
 				009915671FF3DA8A008C6AC5 /* ViewController.swift */,
-				007020031FF2B652005BAB60 /* AppDelegate.swift */,
-				007020071FF2B652005BAB60 /* SettingsViewController.swift */,
-				007020091FF2B652005BAB60 /* Main.storyboard */,
 				0070200C1FF2B652005BAB60 /* Assets.xcassets */,
-				0070200E1FF2B652005BAB60 /* LaunchScreen.storyboard */,
-				007020111FF2B652005BAB60 /* Info.plist */,
 			);
 			path = GuitarChords;
 			sourceTree = "<group>";
@@ -336,6 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0007F17A1FF9520400FA820F /* Database.swift in Sources */,
+				0007F1781FF9503400FA820F /* ChordSaver.swift in Sources */,
 				0099157F1FF3DA8E008C6AC5 /* ViewController.swift in Sources */,
 				009915831FF3DA8E008C6AC5 /* Func.swift in Sources */,
 				0099158D1FF3DA8E008C6AC5 /* GuitarFret.swift in Sources */,
@@ -344,6 +358,7 @@
 				0099158E1FF3DA8E008C6AC5 /* GuitarString.swift in Sources */,
 				009915871FF3DA8E008C6AC5 /* Guitar.swift in Sources */,
 				0060BF3E1FF881BA00AA84E3 /* StringHeaderLabel.swift in Sources */,
+				00C00DAB1FF945B100D4E710 /* ChordFingerPattern.swift in Sources */,
 				007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */,
 				009915951FF3DA8E008C6AC5 /* FretViewController.swift in Sources */,
 				009915901FF3DA8E008C6AC5 /* ChordType.swift in Sources */,
@@ -353,6 +368,7 @@
 				009915921FF3DA8E008C6AC5 /* MajorChord.swift in Sources */,
 				0099158B1FF3DA8E008C6AC5 /* GuitarStringType.swift in Sources */,
 				007020041FF2B652005BAB60 /* AppDelegate.swift in Sources */,
+				00C00D661FF9254E00D4E710 /* Data.xcdatamodeld in Sources */,
 				009915891FF3DA8E008C6AC5 /* Chord.swift in Sources */,
 				009915851FF3DA8E008C6AC5 /* GuitarChordsBrain.swift in Sources */,
 				009915881FF3DA8E008C6AC5 /* ArrayMultiplier.swift in Sources */,
@@ -654,6 +670,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		00C00D641FF9254E00D4E710 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				00C00D651FF9254E00D4E710 /* FingerPatterns.xcdatamodel */,
+			);
+			currentVersion = 00C00D651FF9254E00D4E710 /* FingerPatterns.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 00701FF81FF2B652005BAB60 /* Project object */;
 }

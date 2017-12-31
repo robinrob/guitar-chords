@@ -78,6 +78,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chordVariationPicker.delegate = self
         
         initGuitar()
+        
+//        ChordSaver().installStandardChordPatterns()
     }
     
     override func didReceiveMemoryWarning() {

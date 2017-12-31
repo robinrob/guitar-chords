@@ -51,6 +51,14 @@ struct FingerPosition: Equatable, Hashable {
         }
     }
     
+    var fretNumAsInt: Int {
+        if self.fretNum == nil {
+            return -1
+        } else {
+            return self.fretNum!
+        }
+    }
+    
     init(atFret fret: GuitarFret) {
         self.fret = fret
         self.string = nil

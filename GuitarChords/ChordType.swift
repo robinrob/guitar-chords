@@ -23,4 +23,8 @@ enum ChordType: String {
     case aMinor = "A Minor"
     case bMajor = "B Major"
     case bMinor = "B Minor"
+    
+    var name: String {
+        return self.rawValue
+    }
 }
