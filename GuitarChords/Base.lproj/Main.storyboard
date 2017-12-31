@@ -18,388 +18,388 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KH2-W2-CVi">
-                                <rect key="frame" x="7" y="10" width="335" height="558"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KH2-W2-CVi">
+                                <rect key="frame" x="15" y="35" width="345" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k7a-mP-pxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="130"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pJ-i4-LTX">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="130"/>
                                             </pickerView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-xB-xVg">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="100"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="167.5" height="130"/>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="H5T-dQ-WJc"/>
+                                            <constraint firstAttribute="height" constant="130" id="H5T-dQ-WJc"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eNw-mu-mGK">
-                                        <rect key="frame" x="0.0" y="120" width="335" height="438"/>
+                                        <rect key="frame" x="0.0" y="150" width="345" height="418"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-PP-XJM">
-                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="438"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKZ-e3-0q8" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683445530025" blue="0.24685487307419707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5l-R0-lvw" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683445530025" blue="0.24685487307419707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVU-q3-d1K" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683445530025" blue="0.24685487307419707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-Xi-Fie" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAT-XS-heq" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-6V-zNs" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrX-We-sIF" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N3-cs-xpj" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wn4-dr-qYF" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1T-Aj-szH" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-yv-gbo" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wof-Uy-AgP" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcf-Yn-lGM" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-ZY-7DB" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2cx-E9-FHV">
-                                                <rect key="frame" x="58.5" y="0.0" width="43" height="438"/>
+                                                <rect key="frame" x="60" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-uO-Zps" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N91-0x-veU" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1s4-3r-STu" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-8b-K7c" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nL9-Ik-shu" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncx-kh-Hgd" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIl-ma-xwf" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pet-EZ-evf" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SM-bZ-O9b" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUf-H4-hBR" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiM-wu-Oie" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO3-nd-cNl" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuw-Jp-jE5" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwf-W5-nOl" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Co-Tt-Ayr">
-                                                <rect key="frame" x="116.5" y="0.0" width="43.5" height="438"/>
+                                                <rect key="frame" x="120" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRN-Uq-cPm" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-Xi-pPR" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-yE-cyK" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJO-6v-DFK" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rm2-LG-kiE" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByL-IN-yF5" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-4U-lEv" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6x-2V-Xwa" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N24-wf-BkU" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QH-gp-9sV" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaD-cz-Yee" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn2-tz-ZZ8" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN2-Ij-eLK" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf0-mz-Niv" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5xb-a2-W43">
-                                                <rect key="frame" x="175" y="0.0" width="43.5" height="438"/>
+                                                <rect key="frame" x="180" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-mv-KUz" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsZ-zX-BEt" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eb-X3-oG9" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO9-1Y-ccw" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-xi-6Ru" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-nn-wFm" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-Rd-KgM" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGX-nH-u5s" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-Al-Zts" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzk-VK-pbP" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzz-ze-Z26" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIP-hN-B8d" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-qS-DJX" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-Jp-FpW" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-Ve-X6G">
-                                                <rect key="frame" x="233.5" y="0.0" width="43" height="438"/>
+                                                <rect key="frame" x="240" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMP-eW-X7q" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjT-CT-CH7" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX5-yA-GCs" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxL-Ug-Nju" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kme-Fm-y6t" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Z-FU-Zq1" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3r-ng-Kuq" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTq-Qu-dVF" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nk-gT-Emi" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0M-w0-IJL" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqR-Mv-X1V" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p15-DD-IEv" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-hT-ji2" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-6J-pBX" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Evo-G3-0kD">
-                                                <rect key="frame" x="291.5" y="0.0" width="43.5" height="438"/>
+                                                <rect key="frame" x="300" y="0.0" width="45" height="418"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-dJ-xZg" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waV-3Z-8d4" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="32" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HH-Ht-tsT" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="64" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="61" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkF-ma-Vgp" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="91.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-KP-Ski" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="122.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMU-Ki-1Y7" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="160" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="153" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaE-SB-1zZ" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="192" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="183.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKY-V6-eAa" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="224" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="214" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-fD-uWv" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="244.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoi-bu-Rfw" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="288" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="275" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Em-Il-guN" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="320" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="305.5" width="45" height="21"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY4-GA-y0p" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="352" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="336.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Occ-d2-QbS" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="384" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="367" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bX-Dz-HRo" customClass="FretButton" customModule="GuitarChords" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416" width="43.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="397.5" width="45" height="20.5"/>
                                                         <color key="backgroundColor" red="0.82693086140000005" green="0.53430683450000005" blue="0.24685487310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </button>
                                                 </subviews>
@@ -411,10 +411,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KH2-W2-CVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gzy-R6-OYV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KH2-W2-CVi" secondAttribute="bottom" constant="20" id="d74-bv-qdn"/>
-                            <constraint firstItem="KH2-W2-CVi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jZf-hx-cjj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH2-W2-CVi" secondAttribute="trailing" constant="20" id="ywe-Dn-sFB"/>
+                            <constraint firstItem="KH2-W2-CVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Gzy-R6-OYV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KH2-W2-CVi" secondAttribute="bottom" constant="15" id="d74-bv-qdn"/>
+                            <constraint firstItem="KH2-W2-CVi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jZf-hx-cjj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KH2-W2-CVi" secondAttribute="trailing" constant="15" id="ywe-Dn-sFB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -519,14 +519,26 @@
                     <view key="view" contentMode="scaleToFill" id="wM9-iY-uej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ki7-yS-5Ax">
+                                <rect key="frame" x="27" y="76" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ki7-yS-5Ax" firstAttribute="centerX" secondItem="TzJ-PK-rof" secondAttribute="centerX" id="5at-zP-oE9"/>
+                            <constraint firstItem="ki7-yS-5Ax" firstAttribute="centerX" secondItem="TzJ-PK-rof" secondAttribute="centerX" id="BF3-tx-HrR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TzJ-PK-rof"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="7eO-9b-1qE"/>
+                    <connections>
+                        <outlet property="guitarTuningPicker" destination="ki7-yS-5Ax" id="66D-eZ-ZSr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7E-pK-wDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="587"/>
+            <point key="canvasLocation" x="1637.5999999999999" y="586.95652173913049"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8gP-am-Ca5">

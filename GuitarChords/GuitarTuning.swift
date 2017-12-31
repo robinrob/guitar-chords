@@ -8,11 +8,22 @@
 
 import Foundation
 
-enum GuitarTuning {
-    case standard
-    case dropD
-    case dropC
-    case dropB
+enum GuitarTuning: String {
+    case standard = "Standard"
+    case dropD = "DADGBD"
+    case dropC = "CGCFAD"
+    case dropB = "BF#BEG#C#"
+    
+    static var all: [GuitarTuning] {
+        get {
+            return [
+                .standard,
+                .dropD,
+                .dropC,
+                .dropB
+            ]
+        }
+    }
     
     var notes: [GuitarStringType: Note] {
         switch self {

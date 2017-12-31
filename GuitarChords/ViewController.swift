@@ -22,8 +22,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var stringFiveView: StringView!
     @IBOutlet var stringSixView: StringView!
 
-    
-    let guitar = Guitar()
+    var guitar: Guitar?
+    var guitarTuning: GuitarTuning = GuitarTuning.standard {
+        didSet {
+            self.initGuitar()
+        }
+    }
     
     var chordChoices = ChordDictionary.getAllChordNames().sorted()
     
@@ -53,18 +57,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chordVariationPicker.dataSource = self
         chordVariationPicker.delegate = self
         
-        for stringType in GuitarStringType.all {
-            let string = stringTypesToStringViews[stringType]!
-            
-            for (fretIndex, fret) in string.enumerated() {
-                fret.addTarget(self, action: #selector(selectFret(_:)), for: .touchUpInside)
-                fret.name = "\(stringType.rawValue)\(fretIndex+1)"
-            }
-        }
-        
-        updateVariationsFor(chordName: chordChoices[0])
+        initGuitar()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,8 +98,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView,
-                             didSelectRow row: Int,
-                             inComponent component: Int) {
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
         switch pickerView {
         case chordPicker:
             updateVariationsFor(chordName: self.chordChoices[row])
@@ -118,8 +113,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    func initGuitar() {
+        self.guitar = Guitar(withTuning: self.guitarTuning)
+        
+        for stringType in GuitarStringType.all {
+            let string = stringTypesToStringViews[stringType]!
+            
+            for (fretIndex, fret) in string.enumerated() {
+//                fret.addTarget(self, action: #selector(selectFret(_:)), for: .touchUpInside)
+                fret.isEnabled = false
+                fret.setTitleColor(UIColor.black, for: .highlighted)
+                fret.setTitleColor(UIColor.black, for: .focused)
+                fret.setTitleColor(UIColor.black, for: .normal)
+                fret.setTitleColor(UIColor.black, for: .selected)
+                fret.setTitleColor(UIColor.black, for: .reserved)
+                fret.setTitleColor(UIColor.black, for: .disabled)
+                fret.name = "\(stringType.rawValue)\(fretIndex+1)"
+                let note = guitar!.getString(byType: stringType).getFret(atFretNum: fretIndex+1).note
+                fret.setTitle(note.label, for: UIControlState.normal)
+            }
+        }
+        updateVariationsFor(chordName: chordChoices[0])
+    }
+    
     func updateVariationsFor(chordName: String) {
-        let fingerPatterns = self.guitar.findAllFingerPatterns(ofChordType: ChordType(rawValue: chordName)!, withMaxFretWidth: 3).sorted {
+        let fingerPatterns = self.guitar!.findAllFingerPatterns(ofChordType: ChordType(rawValue: chordName)!, withMaxFretWidth: 3).sorted {
             a, b in
             a.notes.count > b.notes.count || a.averageFretNum < b.averageFretNum
         }
@@ -135,11 +153,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             self.chordVariationChoices = [-1]
         }
-
+        
         chordVariationPicker.selectRow(0, inComponent: 0, animated: false)
         chordVariationPicker.reloadAllComponents()
     }
-
+    
     func displayFingerPattern(_ fingerPattern: FingerPattern) {
         resetAllStrings()
         
@@ -149,7 +167,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if fingerPosition.isMuted {
                 muteStringView(stringView)
             } else if !fingerPosition.isOpenString && fingerPosition.fretNum! > 0 {
-                selectFretByFretNum(stringView, fingerPosition.fretNum!)
+                applyFingerPositionToStringFretNum(stringView, fingerPosition)
             }
         }
     }
@@ -172,8 +190,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func selectFretByFretNum(_ string: StringView, _ fretNum: Int) {
-        self.selectFret(string[fretNum-1])
+    func applyFingerPositionToStringFretNum(_ string: StringView, _ fingerPosition: FingerPosition) {
+        let fretView = string[fingerPosition.fretNum! - 1]
+        self.selectFret(fretView)
     }
     
     @objc func selectFret(_ sender: FretView) {

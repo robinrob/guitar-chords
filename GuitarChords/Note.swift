@@ -25,4 +25,33 @@ enum Note: Int {
     public func advanced(bySemiTones semiTones: Int) -> Note {
         return Note(rawValue: (self.rawValue + semiTones) % 12)!
     }
+    
+    var label: String {
+        switch self {
+        case .c:
+            return "C"
+        case .cSharp:
+            return "C#"
+        case .d:
+            return "D"
+        case .dSharp:
+            return "D#"
+        case .e:
+            return "E"
+        case .f:
+            return "F"
+        case .fSharp:
+            return "F#"
+        case .g:
+            return "G"
+        case .gSharp:
+            return "G#"
+        case .a:
+            return "A"
+        case .aSharp:
+            return "A#"
+        case .b:
+            return "B"
+        }
+    }
 }
