@@ -2,6 +2,51 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GuitarChords.xcodeproj">
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/ChordTests.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/FingerPattern.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/GuitarChordsTests.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/Mocks.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChord.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordDictionary.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestData.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestExtensions.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestFingerPattern.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestFingerPosition.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestFunc.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestGuitar.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestGuitarFret.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestGuitarString.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestNote.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
