@@ -25,7 +25,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test0thFretOfEStringShouldBeE() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         let fret = string.getFret(atFretNum: 0)
         
         let note = fret.note
@@ -34,7 +34,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test1stFretOfEStringShouldBeF() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         let fret = string.getFret(atFretNum: 1)
         
         let note = fret.note
@@ -43,7 +43,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test5thFretOfEStringShouldBeA() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         let fret = string.getFret(atFretNum: 5)
         
         let note = fret.note
@@ -52,7 +52,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test12thFretOfEStringShouldBeE() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         let fret = string.getFret(atFretNum: 12)
         
         let note = fret.note
@@ -61,7 +61,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test14thFretOfEStringShouldBeFSharp() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         let fret = string.getFret(atFretNum: 14)
         
         let note = fret.note
@@ -70,7 +70,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test2ndFretOfAStringShouldBeB() {
-        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let string = self.guitar!.getString(byType: GuitarStringType.two)
         let fret = string.getFret(atFretNum: 2)
         
         let note = fret.note
@@ -79,7 +79,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test3rdFretOfAStringShouldBeC() {
-        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let string = self.guitar!.getString(byType: GuitarStringType.two)
         let fret = string.getFret(atFretNum: 3)
         
         let note = fret.note
@@ -88,7 +88,7 @@ class TestGuitarFret: XCTestCase {
     }
     
     func test1stFretOfBStringShouldBeC() {
-        let string = self.guitar!.getString(byType: GuitarStringType.b)
+        let string = self.guitar!.getString(byType: GuitarStringType.five)
         let fret = string.getFret(atFretNum: 1)
         
         let note = fret.note
@@ -98,10 +98,10 @@ class TestGuitarFret: XCTestCase {
     
     func testShouldReturnString() {
         let guitar = self.guitar!
-        let fret = guitar.getString(byType: GuitarStringType.e1).getFret(atFretNum: 1)
+        let fret = guitar.getString(byType: GuitarStringType.one).getFret(atFretNum: 1)
         
         let fretString = fret.string
         
-        assert(GuitarStringType.e1 == fretString.type)
+        assert(GuitarStringType.one == fretString.type)
     }
 }

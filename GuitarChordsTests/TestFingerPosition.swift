@@ -25,7 +25,7 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testShouldBeOpenStringWhenFretIs0thFret() {
-        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.one).getFret(atFretNum: 0))
         
         let isOpen = pos.isOpenString
         
@@ -33,7 +33,7 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testShouldNotBeMutedByDefault() {
-        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.one).getFret(atFretNum: 0))
         
         let isMuted = pos.isMuted
         
@@ -41,7 +41,7 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testShouldBeMutedWhenNoFretSet() {
-        let pos = FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.e1))
+        let pos = FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.one))
         
         let isMuted = pos.isMuted
         
@@ -49,7 +49,7 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testShouldBeMutedAfterManuallyMuted() {
-        var pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.e1).getFret(atFretNum: 0))
+        var pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.one).getFret(atFretNum: 0))
         pos.mute()
         
         let isMuted = pos.isMuted
@@ -58,18 +58,18 @@ class TestFingerPosition: XCTestCase {
     }
     
     func testPositionOnFretShouldReturnString() {
-        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.a).getFret(atFretNum: 2))
+        let pos = FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.two).getFret(atFretNum: 2))
         
         let string = pos.guitarString
         
-        assert(GuitarStringType.a == string.type)
+        assert(GuitarStringType.two == string.type)
     }
     
     func testMutedPositionShouldReturnString() {
-        let pos = FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.g))
+        let pos = FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.four))
         
         let string = pos.guitarString
         
-        assert(GuitarStringType.g == string.type)
+        assert(GuitarStringType.four == string.type)
     }
 }

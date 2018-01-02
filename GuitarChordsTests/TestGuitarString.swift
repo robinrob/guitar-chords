@@ -24,7 +24,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForE1String() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         
         let baseNote = string.baseNote
         
@@ -32,7 +32,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForAString() {
-        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let string = self.guitar!.getString(byType: GuitarStringType.two)
         
         let baseNote = string.baseNote
         
@@ -40,7 +40,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForDString() {
-        let string = self.guitar!.getString(byType: GuitarStringType.d)
+        let string = self.guitar!.getString(byType: GuitarStringType.three)
         
         let baseNote = string.baseNote
         
@@ -48,7 +48,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForGString() {
-        let string = self.guitar!.getString(byType: GuitarStringType.g)
+        let string = self.guitar!.getString(byType: GuitarStringType.four)
         
         let baseNote = string.baseNote
         
@@ -56,7 +56,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForBString() {
-        let string = self.guitar!.getString(byType: GuitarStringType.b)
+        let string = self.guitar!.getString(byType: GuitarStringType.five)
         
         let baseNote = string.baseNote
         
@@ -64,7 +64,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectBaseNoteForE2String() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e2)
+        let string = self.guitar!.getString(byType: GuitarStringType.six)
         
         let baseNote = string.baseNote
         
@@ -72,7 +72,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnOpenStringFretAtFretNum0() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         
         let fret = string.getFret(atFretNum: 0)
         
@@ -82,7 +82,7 @@ class TestGuitarString: XCTestCase {
     
     
     func testShouldReturnCorrectFretAtFretNum12() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         
         let fret = string.getFret(atFretNum: 12)
         
@@ -91,7 +91,7 @@ class TestGuitarString: XCTestCase {
     }
     
     func testShouldReturnCorrectFretAtFretNum14() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         
         let fret = string.getFret(atFretNum: 14)
         

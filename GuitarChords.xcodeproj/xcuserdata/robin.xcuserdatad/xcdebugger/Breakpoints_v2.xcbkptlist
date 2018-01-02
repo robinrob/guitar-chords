@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChordsTests/TestChordFingerPattern.swift"
+            timestampString = "536625561.672206"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.__deallocating_deinit"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.532434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.__allocating_init(invocation: Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.535325"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.init(invocation: Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.53703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.__allocating_init(selector: ObjectiveC.Selector) -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.538575"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.init(selector: ObjectiveC.Selector) -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.54052"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.__allocating_init() -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.542128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuitarChordsTests.TestChordFingerPattern.init() -&gt; GuitarChordsTests.TestChordFingerPattern"
+                  moduleName = "GuitarChordsTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestChordFingerPattern.swift"
+                  timestampString = "536524365.543828"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ChordFingerPattern.swift"
+            timestampString = "536625561.67259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "insertFromFingerPattern(chordType:fingerPattern:guitarTuning:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -25,15 +25,15 @@ class TestGuitar: XCTestCase {
     }
     
     func testShouldGetE1String() {
-        let string = self.guitar!.getString(byType: GuitarStringType.e1)
+        let string = self.guitar!.getString(byType: GuitarStringType.one)
         
-        assert(GuitarStringType.e1 == string.type)
+        assert(GuitarStringType.one == string.type)
     }
     
     func testShouldGetAString() {
-        let string = self.guitar!.getString(byType: GuitarStringType.a)
+        let string = self.guitar!.getString(byType: GuitarStringType.two)
         
-        assert(GuitarStringType.a == string.type)
+        assert(GuitarStringType.two == string.type)
     }
     
     func testShouldFind0FingerPatternsForCMajorChordWithFretWidth0() {
@@ -45,7 +45,7 @@ class TestGuitar: XCTestCase {
     func testShouldFind0FingerPatternsForCMajorChordWithFretWidth1() {
         let patterns = self.guitar!.findFingerPatterns(ofChordType: ChordType.cMajor, withFretWidth: 1)
         
-        assert(patterns.count == 1)
+        assert(patterns.count == 0)
     }
     
     func testShouldFind2FingerPatternsForCMajorChordWithFretWidth3InFirst3Frets() {
@@ -58,26 +58,26 @@ class TestGuitar: XCTestCase {
         }
         
         var pattern = patterns[0]
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.e1).isMuted)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.a).fret!.fretNum == 3)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.d).fret!.fretNum == 2)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.g).isOpenString)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.b).fret!.fretNum == 1)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.e2).isOpenString)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.one).isMuted)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.two).fret!.fretNum == 3)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.three).fret!.fretNum == 2)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.four).isOpenString)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.five).fret!.fretNum == 1)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.six).isOpenString)
         
         pattern = patterns[1]
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.e1).isMuted)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.a).fret!.fretNum == 3)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.d).fret!.fretNum == 2)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.g).isOpenString)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.b).fret!.fretNum == 1)
-        assert(pattern.getFingerPosition(byStringType: GuitarStringType.e2).fret!.fretNum == 3)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.one).isMuted)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.two).fret!.fretNum == 3)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.three).fret!.fretNum == 2)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.four).isOpenString)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.five).fret!.fretNum == 1)
+        assert(pattern.getFingerPosition(byStringType: GuitarStringType.six).fret!.fretNum == 3)
     }
     
     func testShouldFind4FingerPatternsForCMajorChordWithFretWidth3InAllFrets() {
         let patterns = self.guitar!.findFingerPatterns(ofChordType: ChordType.cMajor, withFretWidth: 3)
         
-        assert(patterns.count == 4)
+        assert(patterns.count == 6)
         
         for pattern in patterns {
             assert(pattern.isChord(ChordType.cMajor))
