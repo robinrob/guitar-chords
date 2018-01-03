@@ -69,4 +69,23 @@ class TestChordFingerPattern: XCTestCase {
         
         assert(chordFingerPatterns.count == 1)
     }
+    
+    func testShouldConvertToFingerPattern() {
+        let fingerPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: .one)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .two).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .three).getFret(atFretNum: 2)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .four).getFret(atFretNum: 0)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .five).getFret(atFretNum: 1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .six).getFret(atFretNum: 0))
+            ]
+        )
+        
+        let chordFingerPattern = ChordFingerPattern.insertFromFingerPattern(chordType: .cMajor, fingerPattern: fingerPattern, guitarTuning: .standard)
+        
+        let convertedFingerPattern = chordFingerPattern.toFingerPattern(onGuitar: self.guitar!)
+        
+        assert(convertedFingerPattern == fingerPattern)
+    }
 }

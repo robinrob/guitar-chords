@@ -68,9 +68,12 @@ class ChordFingerPattern: NSManagedObject {
     
     func toFingerPattern(onGuitar guitar: Guitar) -> FingerPattern {
         var fingerPositions: [FingerPosition] = []
+        
         for stringType in GuitarStringType.all {
-            if self.stringTypesToFrets[stringType]! > -1 {
-                fingerPositions.append(FingerPosition(atFret: guitar.getString(byType: stringType).getFret(atFretNum: Int(self.string_1_fret))))
+            let stringFret = self.stringTypesToFrets[stringType]!
+            
+            if stringFret > -1 {
+                fingerPositions.append(FingerPosition(atFret: guitar.getString(byType: stringType).getFret(atFretNum: Int(stringFret))))
             } else {
                 fingerPositions.append(FingerPosition(mutingString: guitar.getString(byType: stringType)))
             }
