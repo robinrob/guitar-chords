@@ -9,18 +9,23 @@
 import Foundation
 
 class ChordSaver {
-    
-    
-    func installStandardChordPatterns() {
-        for tuning in [GuitarTuning.standard] {
-            let guitar = Guitar(withTuning: .standard)
+    func installChordPatterns() {
+        print("CALCULATING FINGER PATTERNS ...")
+        ChordFingerPattern.deleteAll()
+        for tuning in GuitarTuning.all {
+//        for tuning in [GuitarTuning.standard] {
+            print("tuning: \(tuning)")
+            let guitar = Guitar(withTuning: tuning)
             
             for chordType in ChordDictionary.getAllChordTypes() {
-                let fingerPatterns = guitar.findAllFingerPatterns(ofChordType: chordType, withMaxFretWidth: 4)
+//              for chordType in [ChordType.aMajor, ChordType.aMinor] {
+                print("chordType: \(chordType)")
+                let fingerPatterns = guitar.findAllFingerPatterns(ofChordType: chordType, withMaxFretWidth: 3)
                 for fingerPattern in fingerPatterns {
                     ChordFingerPattern.insertFromFingerPattern(chordType: chordType, fingerPattern: fingerPattern, guitarTuning: tuning)
                 }
             }
         }
+        Database.save()
     }
 }

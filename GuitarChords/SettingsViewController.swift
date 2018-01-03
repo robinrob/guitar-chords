@@ -71,5 +71,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             print("Unrecognised picker view choice")
         }
     }
+    
+    @IBAction func recalculateChords(_ sender: Any) {
+        ChordSaver().installChordPatterns()
+    }
+    
 }
 

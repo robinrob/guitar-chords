@@ -78,8 +78,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chordVariationPicker.delegate = self
         
         initGuitar()
-        
-//        ChordSaver().installStandardChordPatterns()
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,13 +157,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 fret.setTitle(note.label, for: UIControlState.normal)
             }
         }
-        updateVariationsFor(chordName: chordChoices[0])
+        updateVariationsFor(chordName: self.chordChoices[0])
     }
     
     func updateVariationsFor(chordName: String) {
-        let fingerPatterns = self.guitar!.findAllFingerPatterns(ofChordType: ChordType(rawValue: chordName)!, withMaxFretWidth: 3).sorted {
+        let fingerPatterns = FingerPattern.getGuitarFingerPatternsByChordTypeAndTuning(
+            onGuitar: self.guitar!,
+            chordType: ChordType(rawValue: chordName)!,
+            guitarTuning: self.guitarTuning
+        ).sorted {
             a, b in
-            a.notes.count > b.notes.count || a.averageFretNum < b.averageFretNum
+            a.averageFretNum < b.averageFretNum
         }
         
         if fingerPatterns.count > 0 {

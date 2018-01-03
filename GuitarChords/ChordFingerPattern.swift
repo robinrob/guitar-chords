@@ -81,4 +81,8 @@ class ChordFingerPattern: NSManagedObject {
         
         return FingerPattern(fingerPositions: fingerPositions)
     }
+    
+    static func toFingerPatterns(onGuitar guitar: Guitar, chordFingerPatterns: [ChordFingerPattern]) -> [FingerPattern] {
+        return chordFingerPatterns.map { return $0.toFingerPattern(onGuitar: guitar) }
+    }
 }

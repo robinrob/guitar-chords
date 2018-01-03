@@ -116,4 +116,11 @@ class FingerPattern: CustomStringConvertible, Equatable {
 //        }
 //        return false
     }
+    
+    static func getGuitarFingerPatternsByChordTypeAndTuning(onGuitar guitar: Guitar, chordType: ChordType, guitarTuning: GuitarTuning) -> [FingerPattern] {
+        return ChordFingerPattern.toFingerPatterns(
+            onGuitar: guitar,
+            chordFingerPatterns: ChordFingerPattern.getByChordTypeAndTuning(chordType: chordType, guitarTuning: guitarTuning)
+        )
+    }
 }
