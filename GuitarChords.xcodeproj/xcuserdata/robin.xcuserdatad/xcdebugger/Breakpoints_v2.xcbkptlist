@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarChordsTests/TestChordFingerPattern.swift"
-            timestampString = "536625561.672206"
+            timestampString = "536641308.738163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
@@ -133,12 +133,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarChords/ChordFingerPattern.swift"
-            timestampString = "536625561.67259"
+            timestampString = "536641308.738416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "insertFromFingerPattern(chordType:fingerPattern:guitarTuning:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GuitarChords/ChordFingerPattern.swift"
+            timestampString = "536641308.738599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "deleteAll()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

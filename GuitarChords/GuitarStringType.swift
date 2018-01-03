@@ -28,4 +28,8 @@ enum GuitarStringType: String, Hashable {
             ]
         }
     }
+    
+    var label: String {
+        return self.rawValue
+    }
 }

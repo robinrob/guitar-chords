@@ -22,21 +22,24 @@ class TestChordFingerPattern: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        ChordFingerPattern.deleteAll()
+        Database.save()
     }
     
     func testShouldInsertChordFingerPattern() {
         let fingerPattern = FingerPattern(
             fingerPositions: [
-                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.one)),
-                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.two).getFret(atFretNum: 3)),
-                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.three).getFret(atFretNum: 2)),
-                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.four).getFret(atFretNum: 0)),
-                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.five).getFret(atFretNum: 1)),
-                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.six).getFret(atFretNum: 0))
+                FingerPosition(mutingString: self.guitar!.getString(byType: .one)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .two).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .three).getFret(atFretNum: 2)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .four).getFret(atFretNum: 0)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .five).getFret(atFretNum: 1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .six).getFret(atFretNum: 0))
             ]
         )
         
-        let chordFingerPattern = ChordFingerPattern.insertFromFingerPattern(chordType: ChordType.cMajor, fingerPattern: fingerPattern, guitarTuning: .standard)
+        let chordFingerPattern = ChordFingerPattern.insertFromFingerPattern(chordType: .cMajor, fingerPattern: fingerPattern, guitarTuning: .standard)
         
         assert(chordFingerPattern.chord_name == "C Major")
         assert(chordFingerPattern.guitar_tuning == "Standard")
@@ -46,5 +49,24 @@ class TestChordFingerPattern: XCTestCase {
         assert(chordFingerPattern.string_4_fret == 0)
         assert(chordFingerPattern.string_5_fret == 1)
         assert(chordFingerPattern.string_6_fret == 0)
+    }
+    
+    func testGetChordFingerPatterns() {
+        let fingerPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: .one)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .two).getFret(atFretNum: 3)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .three).getFret(atFretNum: 2)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .four).getFret(atFretNum: 0)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .five).getFret(atFretNum: 1)),
+                FingerPosition(atFret: self.guitar!.getString(byType: .six).getFret(atFretNum: 0))
+            ]
+        )
+        
+        ChordFingerPattern.insertFromFingerPattern(chordType: .cMajor, fingerPattern: fingerPattern, guitarTuning: .standard)
+        
+        let chordFingerPatterns = ChordFingerPattern.getByChordTypeAndTuning(chordType: .cMajor, guitarTuning: .standard)
+        
+        assert(chordFingerPatterns.count == 1)
     }
 }

@@ -65,4 +65,8 @@ enum GuitarTuning: String {
             ]
         }
     }
+    
+    var label: String {
+        return self.rawValue
+    }
 }
