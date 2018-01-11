@@ -35,6 +35,18 @@ struct ChordDictionary {
         return ChordDictionary.majorChords
     }
     
+    static func getMajorChordTypes() -> [ChordType] {
+        return getMajorChords().keys.map {$0}
+    }
+    
+    static func getMinorChords() -> [ChordType: Chord] {
+        return ChordDictionary.minorChords
+    }
+    
+    static func getMinorChordTypes() -> [ChordType] {
+        return getMinorChords().keys.map {$0}
+    }
+    
     static func getAllChordTypes() -> [ChordType] {
         return ChordDictionary.allChords.keys.map {$0}
     }

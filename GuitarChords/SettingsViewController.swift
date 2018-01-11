@@ -11,9 +11,23 @@ import UIKit
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var guitarTuningPicker: UIPickerView!
+    @IBOutlet weak var toggleMajorChordsButton: UISwitch!
+    @IBOutlet weak var toggleMinorChordsButton: UISwitch!
+    
+    var chordTypeToggles: [UISwitch] {
+        get {
+            return [
+                self.toggleMajorChordsButton,
+                self.toggleMinorChordsButton
+            ]
+        }
+    }
+    
+    @IBOutlet weak var formError: UILabel!
+    
     let guitarTunings = GuitarTuning.all
     
-    var guitarTuning: GuitarTuning? = GuitarTuning.standard
+    var viewController: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +35,14 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         guitarTuningPicker.dataSource = self
         guitarTuningPicker.delegate = self
+        
+        if let ctrl = self.tabBarController {
+            if let ctrls = ctrl.viewControllers {
+                self.viewController = ctrls[0] as? ViewController
+            }
+        }
+        
+        updateForm()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,16 +79,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     inComponent component: Int) {
         switch pickerView {
         case guitarTuningPicker:
-            self.guitarTuning = self.guitarTunings[row]
-            if let ctrl = self.tabBarController {
-                if let ctrls = ctrl.viewControllers {
-                    if let viewController = (ctrls[0] as? ViewController) {
-                        viewController.guitarTuning = self.guitarTuning!
-                        print("self.guitarTuning: \(self.guitarTuning!.rawValue)")
-                    }
-                }
-            }
-            print("HERE")
+            UserDefaultsDAO.setGuitarTuning(tuning: self.guitarTunings[row])
+            self.viewController!.guitarTuning = UserDefaultsDAO.getGuitarTuning()
         default:
             print("Unrecognised picker view choice")
         }
@@ -76,5 +90,47 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         ChordSaver().installChordPatterns()
     }
     
+    @IBAction func toggleMajorChords(_ sender: Any) {
+        UserDefaultsDAO.toggleShowMajorChords()
+        self.viewController!.showMajorChords = UserDefaultsDAO.getShowMajorChords()
+        self.updateForm()
+    }
+    
+    @IBAction func toggleMinorChords(_ sender: Any) {
+        UserDefaultsDAO.toggleShowMinorChords()
+        self.viewController!.showMinorChords = UserDefaultsDAO.getShowMinorChords()
+        self.updateForm()
+    }
+    
+    @IBAction func resetToDefaults(_ sender: Any) {
+        UserDefaultsDAO.resetToDefaults()
+        self.viewController!.showMajorChords = UserDefaultsDAO.getShowMajorChords()
+        self.viewController!.showMinorChords = UserDefaultsDAO.getShowMinorChords()
+        self.viewController!.guitarTuning = UserDefaultsDAO.getGuitarTuning()
+        
+        updateForm()
+    }
+    
+    func updateForm() {
+        let moreThanOneChordTypeSelected = UserDefaultsDAO.getShowChordTypes().values.filter {$0 == true}.count > 1
+        
+        let guitarTuning = UserDefaultsDAO.getGuitarTuning()
+        self.guitarTuningPicker.selectRow(self.guitarTunings.index(of: guitarTuning)!, inComponent: 0, animated: false)
+        
+        self.toggleMajorChordsButton.setOn(UserDefaultsDAO.getShowMajorChords(), animated: false)
+        self.toggleMinorChordsButton.setOn(UserDefaultsDAO.getShowMinorChords(), animated: false)
+        
+        if !moreThanOneChordTypeSelected {
+            for button in self.chordTypeToggles {
+                if button.isOn {
+                    button.isEnabled = false
+                }
+            }
+        } else {
+            for button in self.chordTypeToggles {
+                button.isEnabled = true
+            }
+        }
+    }
 }
 

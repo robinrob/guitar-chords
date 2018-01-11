@@ -30,13 +30,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var stringSixHeader: UILabel!
     
     var guitar: Guitar?
-    var guitarTuning: GuitarTuning = GuitarTuning.standard {
+    
+    var guitarTuning: GuitarTuning = UserDefaultsDAO.getGuitarTuning() {
         didSet {
             self.initGuitar()
         }
     }
     
-    var chordChoices = ChordDictionary.getAllChordNames().sorted()
+    var showMajorChords = UserDefaultsDAO.getShowMajorChords() {
+        didSet {
+            self.initGuitar()
+        }
+    }
+    
+    var showMinorChords = UserDefaultsDAO.getShowMinorChords() {
+        didSet {
+            self.initGuitar()
+        }
+    }
+    
+    var chordChoices: [String] = []
     
     var chordVariationChoices: [Int] = []
     
@@ -157,6 +170,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 fret.setTitle(note.label, for: UIControlState.normal)
             }
         }
+        
+        self.chordChoices = []
+        if UserDefaultsDAO.getShowMajorChords() {
+            self.chordChoices += ChordDictionary.getMajorChordTypes().map {$0.label}
+        }
+        if UserDefaultsDAO.getShowMinorChords() {
+            self.chordChoices += ChordDictionary.getMinorChordTypes().map {$0.label}
+        }
+
+        self.chordChoices = self.chordChoices.sorted()
+        chordPicker.reloadAllComponents()
         updateVariationsFor(chordName: self.chordChoices[0])
     }
     
