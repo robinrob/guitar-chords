@@ -66,6 +66,16 @@ class ChordFingerPattern: NSManagedObject {
         delete(chordFingerPatterns!)
     }
     
+    static func deleteAllSharp() {
+        let context = AppDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<ChordFingerPattern> = ChordFingerPattern.fetchRequest()
+        request.predicate = NSPredicate(format: "(chord_name like *# Major)")
+        
+        let chordFingerPatterns = try? context.fetch(request)
+        delete(chordFingerPatterns!)
+    }
+    
     func toFingerPattern(onGuitar guitar: Guitar) -> FingerPattern {
         var fingerPositions: [FingerPosition] = []
         

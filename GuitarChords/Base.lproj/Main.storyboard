@@ -617,6 +617,20 @@
                                     <action selector="resetToDefaults:" destination="Hec-w9-cJK" eventType="touchUpInside" id="0UY-k1-ZEX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show sharp chords:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAB-cX-BBE">
+                                <rect key="frame" x="12" y="290" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bzb-54-c6M">
+                                <rect key="frame" x="312" y="283" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleSharpChords:" destination="Hec-w9-cJK" eventType="valueChanged" id="3fg-KX-3ZA"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TzJ-PK-rof"/>
@@ -626,6 +640,7 @@
                         <outlet property="guitarTuningPicker" destination="ki7-yS-5Ax" id="66D-eZ-ZSr"/>
                         <outlet property="toggleMajorChordsButton" destination="Aoy-Hf-ziT" id="JNc-oI-ggo"/>
                         <outlet property="toggleMinorChordsButton" destination="waN-0l-WoY" id="Lud-pe-7he"/>
+                        <outlet property="toggleSharpChordsButton" destination="Bzb-54-c6M" id="ffF-Jr-QGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7E-pK-wDU" userLabel="First Responder" sceneMemberID="firstResponder"/>

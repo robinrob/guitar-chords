@@ -23,6 +23,10 @@ struct Chord: Equatable {
         self.notes = ChordDictionary.getNotesFor(chordType: chordType)
     }
     
+    func raise(bySemitones semitones: Int) -> Chord {
+        return Chord(withNotes: self.notes.map {$0.advanced(bySemiTones: semitones)})
+    }
+    
     static func == (lhs: Chord, rhs: Chord) -> Bool {
         let arr1 = Set(lhs.notes)
         let arr2 = Set(rhs.notes)

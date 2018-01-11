@@ -13,12 +13,14 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var guitarTuningPicker: UIPickerView!
     @IBOutlet weak var toggleMajorChordsButton: UISwitch!
     @IBOutlet weak var toggleMinorChordsButton: UISwitch!
+    @IBOutlet weak var toggleSharpChordsButton: UISwitch!
     
     var chordTypeToggles: [UISwitch] {
         get {
             return [
                 self.toggleMajorChordsButton,
-                self.toggleMinorChordsButton
+                self.toggleMinorChordsButton,
+                self.toggleSharpChordsButton
             ]
         }
     }
@@ -87,7 +89,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func recalculateChords(_ sender: Any) {
-        ChordSaver().installChordPatterns()
+//        ChordSaver().installChordPatterns()
+        ChordSaver().installSharpChordPatterns()
     }
     
     @IBAction func toggleMajorChords(_ sender: Any) {
@@ -102,10 +105,17 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.updateForm()
     }
     
+    @IBAction func toggleSharpChords(_ sender: Any) {
+        UserDefaultsDAO.toggleShowSharpChords()
+        self.viewController!.showSharpChords = UserDefaultsDAO.getShowSharpChords()
+        self.updateForm()
+    }
+    
     @IBAction func resetToDefaults(_ sender: Any) {
         UserDefaultsDAO.resetToDefaults()
         self.viewController!.showMajorChords = UserDefaultsDAO.getShowMajorChords()
         self.viewController!.showMinorChords = UserDefaultsDAO.getShowMinorChords()
+        self.viewController!.showSharpChords = UserDefaultsDAO.getShowSharpChords()
         self.viewController!.guitarTuning = UserDefaultsDAO.getGuitarTuning()
         
         updateForm()
@@ -119,6 +129,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.toggleMajorChordsButton.setOn(UserDefaultsDAO.getShowMajorChords(), animated: false)
         self.toggleMinorChordsButton.setOn(UserDefaultsDAO.getShowMinorChords(), animated: false)
+        self.toggleSharpChordsButton.setOn(UserDefaultsDAO.getShowSharpChords(), animated: false)
         
         if !moreThanOneChordTypeSelected {
             for button in self.chordTypeToggles {

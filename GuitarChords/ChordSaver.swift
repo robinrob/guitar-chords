@@ -28,4 +28,22 @@ class ChordSaver {
         }
         Database.save()
     }
+    
+    func installSharpChordPatterns() {
+        print("CALCULATING FINGER PATTERNS ...")
+        ChordFingerPattern.deleteAll()
+        for tuning in GuitarTuning.all {
+            print("tuning: \(tuning)")
+            let guitar = Guitar(withTuning: tuning)
+            
+            for chordType in ChordDictionary.getSharpChordTypes() {
+                print("chordType: \(chordType)")
+                let fingerPatterns = guitar.findAllFingerPatterns(ofChordType: chordType, withMaxFretWidth: 3)
+                for fingerPattern in fingerPatterns {
+                    ChordFingerPattern.insertFromFingerPattern(chordType: chordType, fingerPattern: fingerPattern, guitarTuning: tuning)
+                }
+            }
+        }
+        Database.save()
+    }
 }

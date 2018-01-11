@@ -12,4 +12,5 @@ import Foundation
 enum ChordCategory: String {
     case minor = "Minor"
     case major = "Major"
+    case sharp = "Sharp"
 }

@@ -49,6 +49,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    var showSharpChords = UserDefaultsDAO.getShowSharpChords() {
+        didSet {
+            self.initGuitar()
+        }
+    }
+    
     var chordChoices: [String] = []
     
     var chordVariationChoices: [Int] = []
@@ -175,8 +181,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if UserDefaultsDAO.getShowMajorChords() {
             self.chordChoices += ChordDictionary.getMajorChordTypes().map {$0.label}
         }
+        if UserDefaultsDAO.getShowSharpChords() {
+            self.chordChoices += ChordDictionary.getMajorSharpChordTypes().map {$0.label}
+        }
         if UserDefaultsDAO.getShowMinorChords() {
             self.chordChoices += ChordDictionary.getMinorChordTypes().map {$0.label}
+        }
+        if UserDefaultsDAO.getShowSharpChords() {
+            self.chordChoices += ChordDictionary.getMinorSharpChordTypes().map {$0.label}
         }
 
         self.chordChoices = self.chordChoices.sorted()

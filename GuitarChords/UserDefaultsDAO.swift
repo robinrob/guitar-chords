@@ -13,6 +13,7 @@ struct UserDefaultsDAO {
     static let IS_INITIALISED = "isInitialised"
     static let SHOW_MAJOR_CHORDS = "showMajorChords"
     static let SHOW_MINOR_CHORDS = "showMinorChords"
+    static let SHOW_SHARP_CHORDS = "showSharpChords"
     static let GUITAR_TUNING = "guitarTuning"
     
     static let defaults: [String: Any] = [
@@ -53,6 +54,10 @@ struct UserDefaultsDAO {
         return userDefaults.bool(forKey: SHOW_MINOR_CHORDS)
     }
     
+    static func getShowSharpChords() -> Bool {
+        return userDefaults.bool(forKey: SHOW_SHARP_CHORDS)
+    }
+    
     static func getGuitarTuning() -> GuitarTuning {
         return GuitarTuning(rawValue: userDefaults.string(forKey: GUITAR_TUNING)!)!
     }
@@ -69,6 +74,10 @@ struct UserDefaultsDAO {
         userDefaults.set(!userDefaults.bool(forKey: SHOW_MINOR_CHORDS), forKey: SHOW_MINOR_CHORDS)
     }
     
+    static func toggleShowSharpChords() {
+        userDefaults.set(!userDefaults.bool(forKey: SHOW_SHARP_CHORDS), forKey: SHOW_SHARP_CHORDS)
+    }
+    
     static func setGuitarTuning(tuning: GuitarTuning) {
         userDefaults.set(tuning.rawValue, forKey: GUITAR_TUNING)
     }
@@ -76,7 +85,8 @@ struct UserDefaultsDAO {
     static func getShowChordTypes() -> [ChordCategory: Bool] {
         return [
             .major: getShowMajorChords(),
-            .minor: getShowMinorChords()
+            .minor: getShowMinorChords(),
+            .sharp: getShowSharpChords()
         ]
     }
 }
