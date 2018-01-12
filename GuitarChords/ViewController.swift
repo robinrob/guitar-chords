@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var guitar: Guitar?
     
-    var guitarTuning: GuitarTuning = UserDefaultsDAO.getGuitarTuning() {
+    var guitarTuning: GuitarTuning = UserDefaultsDAO.getGuitarTuningOrDefault() {
         didSet {
             self.initGuitar()
         }

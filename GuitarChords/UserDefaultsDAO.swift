@@ -11,6 +11,7 @@ import Foundation
 
 struct UserDefaultsDAO {
     static let IS_INITIALISED = "isInitialised"
+    static let IS_DATABASE_INITIALISED = "isDatabaseInitialised"
     static let SHOW_MAJOR_CHORDS = "showMajorChords"
     static let SHOW_MINOR_CHORDS = "showMinorChords"
     static let SHOW_SHARP_CHORDS = "showSharpChords"
@@ -19,6 +20,7 @@ struct UserDefaultsDAO {
     static let defaults: [String: Any] = [
         SHOW_MAJOR_CHORDS: true,
         SHOW_MINOR_CHORDS: true,
+        SHOW_SHARP_CHORDS: true,
         GUITAR_TUNING: GuitarTuning.standard.rawValue
     ]
 
@@ -26,10 +28,14 @@ struct UserDefaultsDAO {
     
     static func initialiseIfUnset() {
         if !userDefaults.bool(forKey: IS_INITIALISED) {
-            print("RESTTING DEFAULTS")
-            resetToDefaults()
-            userDefaults.set(true, forKey: IS_INITIALISED)
+            initialise()
         }
+    }
+    
+    static func initialise() {
+        print("RESTTING DEFAULTS")
+        resetToDefaults()
+        userDefaults.set(true, forKey: IS_INITIALISED)
     }
     
     static func resetToDefaults() {
@@ -58,8 +64,29 @@ struct UserDefaultsDAO {
         return userDefaults.bool(forKey: SHOW_SHARP_CHORDS)
     }
     
+    static func getShowChordTypes() -> [ChordCategory: Bool] {
+        return [
+            .major: getShowMajorChords(),
+            .minor: getShowMinorChords(),
+            .sharp: getShowSharpChords()
+        ]
+    }
+    
     static func getGuitarTuning() -> GuitarTuning {
         return GuitarTuning(rawValue: userDefaults.string(forKey: GUITAR_TUNING)!)!
+    }
+    
+    static func getGuitarTuningOrDefault() -> GuitarTuning {
+        let tuning = userDefaults.string(forKey: GUITAR_TUNING)
+        if tuning == nil {
+            return GuitarTuning.standard
+        } else {
+            return GuitarTuning(rawValue: tuning!)!
+        }
+    }
+    
+    static func getIsDatabaseInitialised() -> Bool {
+        return userDefaults.bool(forKey: IS_DATABASE_INITIALISED)
     }
     
     static func toggle(forKey key: String) {
@@ -82,11 +109,7 @@ struct UserDefaultsDAO {
         userDefaults.set(tuning.rawValue, forKey: GUITAR_TUNING)
     }
     
-    static func getShowChordTypes() -> [ChordCategory: Bool] {
-        return [
-            .major: getShowMajorChords(),
-            .minor: getShowMinorChords(),
-            .sharp: getShowSharpChords()
-        ]
+    static func setIsDatabaseInitialised(_ bool: Bool) {
+        userDefaults.set(bool, forKey: IS_DATABASE_INITIALISED)
     }
 }

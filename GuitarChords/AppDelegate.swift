@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UserDefaultsDAO.initialiseIfUnset()
-        
+
+        copyDatabaseFilesIfNeeded()
+
         return true
     }
 
@@ -89,6 +91,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    func copyDatabaseFilesIfNeeded() {
+        if (!UserDefaultsDAO.getIsDatabaseInitialised()) {
+            print("Attempting to copy Model files ...")
+            
+            let urls = FileManager.default.urls(for: .applicationSupportDirectory , in: .userDomainMask)
+            let applicationSupportDirectory = urls[urls.count-1]
+            print("applicationSupportDirectory: \(applicationSupportDirectory)")
+            
+            let sourceSqliteURLs = [
+                Bundle.main.url(forResource: "Model", withExtension: "sqlite")!,
+                Bundle.main.url(forResource: "Model", withExtension: "sqlite-wal")!,
+                Bundle.main.url(forResource: "Model", withExtension: "sqlite-shm")!
+            ]
+            //            print("sourceSqliteURLs: \(sourceSqliteURLs)")
+            
+            let destSqliteURLs = [
+                applicationSupportDirectory.appendingPathComponent("Model.sqlite"),
+                applicationSupportDirectory.appendingPathComponent("Model.sqlite-wal"),
+                applicationSupportDirectory.appendingPathComponent("Model.sqlite-shm")
+            ]
+            
+            var numErrors = 0
+            for (index, url) in sourceSqliteURLs.enumerated() {
+                let destUrl = destSqliteURLs[index]
+                do {
+                    if FileManager.default.fileExists(atPath: destUrl.path) {
+                        print("DELETING EXISTING DATABASE FILE")
+                        print()
+                        print()
+                        try FileManager.default.removeItem(at: destUrl)
+                    }
+                    try FileManager.default.copyItem(at: url, to: destUrl)
+                } catch {
+                    numErrors += 1
+                    print("DATABASE FILE FAILED TO COPY! Source: \(url), Destination: \(destUrl)")
+                    print()
+                    print()
+                }
+            }
+            if numErrors == 0 {
+                UserDefaultsDAO.setIsDatabaseInitialised(true)
+                print("Model files copied!")
             }
         }
     }

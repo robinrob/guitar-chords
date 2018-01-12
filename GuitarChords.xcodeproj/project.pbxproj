@@ -53,6 +53,10 @@
 		009915931FF3DA8E008C6AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */; };
 		009915941FF3DA8E008C6AC5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099157C1FF3DA8D008C6AC5 /* Note.swift */; };
 		009915951FF3DA8E008C6AC5 /* FretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */; };
+		00B273EC2008434F00E25741 /* Model.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 00B273E92008434E00E25741 /* Model.sqlite-wal */; };
+		00B273ED2008434F00E25741 /* Model.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00B273EA2008434E00E25741 /* Model.sqlite */; };
+		00B273EE2008434F00E25741 /* Model.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 00B273EB2008434E00E25741 /* Model.sqlite-shm */; };
+		00B273F02008455B00E25741 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B273EF2008455B00E25741 /* UserDatabase.swift */; };
 		00B3B7661FFD2D4B00625E63 /* ChordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */; };
 		00B801181FFAA39E00959AD1 /* TestChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B801171FFAA39E00959AD1 /* TestChord.swift */; };
 		00C00DAB1FF945B100D4E710 /* ChordFingerPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */; };
@@ -129,6 +133,10 @@
 		0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0099157C1FF3DA8D008C6AC5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		0099157D1FF3DA8D008C6AC5 /* FretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FretViewController.swift; sourceTree = "<group>"; };
+		00B273E92008434E00E25741 /* Model.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model.sqlite-wal"; sourceTree = "<group>"; };
+		00B273EA2008434E00E25741 /* Model.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Model.sqlite; sourceTree = "<group>"; };
+		00B273EB2008434E00E25741 /* Model.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Model.sqlite-shm"; sourceTree = "<group>"; };
+		00B273EF2008455B00E25741 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordCategory.swift; sourceTree = "<group>"; };
 		00B801171FFAA39E00959AD1 /* TestChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestChord.swift; sourceTree = "<group>"; };
 		00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingerPattern.swift; sourceTree = "<group>"; };
@@ -189,6 +197,9 @@
 				00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */,
 				009915681FF3DA8A008C6AC5 /* Base.lproj */,
 				009915711FF3DA8B008C6AC5 /* Chord.swift */,
+				00B273EA2008434E00E25741 /* Model.sqlite */,
+				00B273EB2008434E00E25741 /* Model.sqlite-shm */,
+				00B273E92008434E00E25741 /* Model.sqlite-wal */,
 				0007F1791FF9520400FA820F /* Database.swift */,
 				009915741FF3DA8C008C6AC5 /* ChordDictionary.swift */,
 				009915781FF3DA8D008C6AC5 /* ChordType.swift */,
@@ -220,6 +231,7 @@
 				009915661FF3DA8A008C6AC5 /* StringViewController.swift */,
 				009915671FF3DA8A008C6AC5 /* ViewController.swift */,
 				0070200C1FF2B652005BAB60 /* Assets.xcassets */,
+				00B273EF2008455B00E25741 /* UserDatabase.swift */,
 			);
 			path = GuitarChords;
 			sourceTree = "<group>";
@@ -361,10 +373,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B273EC2008434F00E25741 /* Model.sqlite-wal in Resources */,
 				007020101FF2B652005BAB60 /* LaunchScreen.storyboard in Resources */,
 				0070200D1FF2B652005BAB60 /* Assets.xcassets in Resources */,
+				00B273ED2008434F00E25741 /* Model.sqlite in Resources */,
 				009915801FF3DA8E008C6AC5 /* Base.lproj in Resources */,
 				0070200B1FF2B652005BAB60 /* Main.storyboard in Resources */,
+				00B273EE2008434F00E25741 /* Model.sqlite-shm in Resources */,
 				009915931FF3DA8E008C6AC5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003FDF76200709F700C27BE8 /* UserDefaultsDAO.swift in Sources */,
+				00B273F02008455B00E25741 /* UserDatabase.swift in Sources */,
 				0007F17A1FF9520400FA820F /* Database.swift in Sources */,
 				0007F1781FF9503400FA820F /* ChordSaver.swift in Sources */,
 				0099157F1FF3DA8E008C6AC5 /* ViewController.swift in Sources */,

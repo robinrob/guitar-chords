@@ -24,6 +24,6 @@ class TestChordDictionary: XCTestCase {
     func testShouldReturnAllChordNames() {
         let names = ChordDictionary.getAllChordNames()
         
-        assert(14 == names.count)
+        assert(28 == names.count)
     }
 }
