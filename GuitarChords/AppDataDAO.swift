@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct UserDatabase {
+struct AppDataDAO {
     static func deleteAllPreloadedData() {
         ChordFingerPattern.deleteAll()
     }

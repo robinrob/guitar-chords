@@ -1,5 +1,5 @@
 //
-//  ChordFingerPattern.swift
+//  FingerPatternData.swift
 //  GuitarChords
 //
 //  Created by  Robin Smith on 31/12/2017.
@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 
 @objc(ChordFingerPattern)
-class ChordFingerPattern: NSManagedObject {
-    
+class ChordFingerPattern: NSManagedObject, Encodable {
     var stringTypesToFrets: [GuitarStringType: Int16] {
         return [
             .one: self.string_1_fret,
@@ -94,5 +93,24 @@ class ChordFingerPattern: NSManagedObject {
     
     static func toFingerPatterns(onGuitar guitar: Guitar, chordFingerPatterns: [ChordFingerPattern]) -> [FingerPattern] {
         return chordFingerPatterns.map { return $0.toFingerPattern(onGuitar: guitar) }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: ChordFingerPatternCodingKey.self)
+        try container.encode(self.chord_name, forKey: .chord_name)
+        try container.encode(self.guitar_tuning, forKey: .guitar_tuning)
+    }
+    
+    func toJSON() -> String {
+        let encoder = JSONEncoder()
+//        encoder.outputFormatting = .prettyPrinted
+        
+        do {
+            let data = try encoder.encode(self)
+            return String(data: data, encoding: .utf8)!
+        } catch {
+            print("encoding error: \(error)")
+        }
+        return ""
     }
 }
