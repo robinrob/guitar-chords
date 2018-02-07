@@ -12,7 +12,19 @@ import CoreData
 
 class TestChordFingerPattern: XCTestCase {
     private var guitar = Guitar()
+    private var chordFingerPatternDAO: ChordFingerPatternDAO = {
+        return ChordFingerPatternDAO(
+            context: AppDelegate.getBackgroundContextForTesting(
+                forModelType: ChordFingerPattern.self
+            )
+        )
+    }()
 
+    override func tearDown() {
+        super.tearDown()
+        
+        self.chordFingerPatternDAO.deleteAll()
+    }
     
     func testShouldConvertToFingerPattern() {
         let fingerPattern = FingerPattern(
@@ -26,7 +38,7 @@ class TestChordFingerPattern: XCTestCase {
             ]
         )
         
-        let chordFingerPattern = ChordFingerPatternDAO().insertFromFingerPattern(
+        let chordFingerPattern = self.chordFingerPatternDAO.insertFromFingerPattern(
             fingerPattern: fingerPattern,
             chordType: .cMajor,
             guitarTuning: .standard
@@ -38,8 +50,7 @@ class TestChordFingerPattern: XCTestCase {
     }
     
     func testShouldEncodeAsJSON() {
-        let context = AppDelegate.persistentContainer.viewContext
-        let chordFingerPattern = NSEntityDescription.insertNewObject(forEntityName: "ChordFingerPattern", into: context) as! ChordFingerPattern
+        let chordFingerPattern = self.chordFingerPatternDAO.insertNew()
         chordFingerPattern.chord_name = "test-chord"
         chordFingerPattern.guitar_tuning = "test-tuning"
         chordFingerPattern.string_1_fret = 1
@@ -50,13 +61,7 @@ class TestChordFingerPattern: XCTestCase {
         chordFingerPattern.string_6_fret = 6
         
         let json = chordFingerPattern.toJSON()
-        print("json: \(json)")
-        let expectedJSON = """
-{
-    "guitar_tuning": "test-tuning",
-    "chord_name": "test-chord"
-}
-""".replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+        let expectedJSON = "{\"string_2_fret\":2,\"string_3_fret\":3,\"string_4_fret\":4,\"chord_name\":\"test-chord\",\"string_5_fret\":5,\"string_6_fret\":6,\"guitar_tuning\":\"test-tuning\",\"string_1_fret\":1}"
         assert(json == expectedJSON)
     }
 }

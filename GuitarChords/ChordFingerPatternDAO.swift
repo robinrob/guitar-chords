@@ -10,6 +10,20 @@ import Foundation
 import CoreData
 
 class ChordFingerPatternDAO {
+    var context: NSManagedObjectContext?
+    
+    init() {}
+    
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
+    
+    func insertNew() -> ChordFingerPattern {
+        return NSEntityDescription.insertNewObject(
+            forEntityName: "ChordFingerPattern",
+            into: self.context!
+        ) as! ChordFingerPattern
+    }
      func insertFromFingerPattern(
         fingerPattern: FingerPattern,
         chordType: ChordType,

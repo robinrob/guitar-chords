@@ -14,6 +14,11 @@ class TestChordFingerPatternDAO: XCTestCase {
     private var dao = ChordFingerPatternDAO()
     private var guitar = Guitar()
     
+    override func tearDown() {
+        super.tearDown()
+        
+        ChordFingerPatternDAO().deleteAll()
+    }
     
     func testShouldInsertChordFingerPattern() {
         let fingerPattern = FingerPattern(

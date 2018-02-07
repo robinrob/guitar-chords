@@ -26,7 +26,6 @@
 		00651A561FFAA34400D23577 /* TestGuitarFret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00651A471FFAA34300D23577 /* TestGuitarFret.swift */; };
 		00651A571FFAA34400D23577 /* TestFingerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00651A481FFAA34300D23577 /* TestFingerPosition.swift */; };
 		00651A581FFAA34400D23577 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00651A491FFAA34300D23577 /* Mocks.swift */; };
-		006690EC202B36CD0051687E /* ChordFingerPatternCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006690EB202B36CD0051687E /* ChordFingerPatternCodingKey.swift */; };
 		007020041FF2B652005BAB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020031FF2B652005BAB60 /* AppDelegate.swift */; };
 		007020081FF2B652005BAB60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020071FF2B652005BAB60 /* SettingsViewController.swift */; };
 		0070200B1FF2B652005BAB60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007020091FF2B652005BAB60 /* Main.storyboard */; };
@@ -105,7 +104,6 @@
 		00651A471FFAA34300D23577 /* TestGuitarFret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGuitarFret.swift; path = /Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestGuitarFret.swift; sourceTree = "<absolute>"; };
 		00651A481FFAA34300D23577 /* TestFingerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestFingerPosition.swift; path = /Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/TestFingerPosition.swift; sourceTree = "<absolute>"; };
 		00651A491FFAA34300D23577 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = /Users/robin/Programming/robin/swift/projects/GuitarChords/GuitarChordsTests/Mocks.swift; sourceTree = "<absolute>"; };
-		006690EB202B36CD0051687E /* ChordFingerPatternCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingerPatternCodingKey.swift; sourceTree = "<group>"; };
 		007020001FF2B652005BAB60 /* GuitarChords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarChords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007020031FF2B652005BAB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007020071FF2B652005BAB60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				009915741FF3DA8C008C6AC5 /* ChordDictionary.swift */,
 				00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */,
 				00533BB2202B5ACD00F49F4A /* ChordFingerPatternDAO.swift */,
-				006690EB202B36CD0051687E /* ChordFingerPatternCodingKey.swift */,
 				0007F1771FF9503400FA820F /* ChordFingerPatternInstaller.swift */,
 				005199E8202B554C0093F3D2 /* ChordFingerPatternGenerator.swift */,
 				009915781FF3DA8D008C6AC5 /* ChordType.swift */,
@@ -424,7 +421,6 @@
 				00B273F02008455B00E25741 /* AppDataDAO.swift in Sources */,
 				0007F17A1FF9520400FA820F /* Database.swift in Sources */,
 				0007F1781FF9503400FA820F /* ChordFingerPatternInstaller.swift in Sources */,
-				006690EC202B36CD0051687E /* ChordFingerPatternCodingKey.swift in Sources */,
 				0099157F1FF3DA8E008C6AC5 /* ViewController.swift in Sources */,
 				009915831FF3DA8E008C6AC5 /* Func.swift in Sources */,
 				0099158D1FF3DA8E008C6AC5 /* GuitarFret.swift in Sources */,

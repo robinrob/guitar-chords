@@ -140,5 +140,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    static func getBackgroundContextForTesting(forModelType modelType: AnyClass) -> NSManagedObjectContext {
+        return {
+            let mockPersistantContainer: NSPersistentContainer = {
+                let managedObjectModel: NSManagedObjectModel = {
+                    let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle(for: modelType)] )!
+                    return managedObjectModel
+                }()
+                
+                let container = NSPersistentContainer(name: "PersistentTodoList", managedObjectModel: managedObjectModel)
+                let description = NSPersistentStoreDescription()
+                description.type = NSInMemoryStoreType
+                description.shouldAddStoreAsynchronously = false // Make it simpler in test env
+                
+                container.persistentStoreDescriptions = [description]
+                container.viewContext.automaticallyMergesChangesFromParent = true
+                container.loadPersistentStores { (description, error) in
+                    // Check if the data store is in memory
+                    precondition( description.type == NSInMemoryStoreType )
+                    
+                    // Check if creating container wrong
+                    if let error = error {
+                        fatalError("Create an in-mem coordinator failed \(error)")
+                    }
+                }
+                return container
+            }()
+            return mockPersistantContainer.newBackgroundContext()
+        }()
+    }
 }
 
