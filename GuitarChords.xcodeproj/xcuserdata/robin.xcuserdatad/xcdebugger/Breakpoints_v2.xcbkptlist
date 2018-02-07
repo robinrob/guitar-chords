@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarChordsTests/TestChordFingerPattern.swift"
-            timestampString = "539700211.053106"
+            timestampString = "539713175.223515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
@@ -133,13 +133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarChords/ChordFingerPattern.swift"
-            timestampString = "539704510.281275"
+            timestampString = "539712724.774174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "ChordFingerPattern"
-            landmarkType = "3">
+            startingLineNumber = "60"
+            endingLineNumber = "60">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -149,13 +147,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuitarChords/ChordFingerPattern.swift"
-            timestampString = "539704510.281852"
+            timestampString = "539712724.7744401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "ChordFingerPattern"
-            landmarkType = "3">
+            startingLineNumber = "60"
+            endingLineNumber = "60">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

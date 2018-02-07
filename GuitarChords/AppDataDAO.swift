@@ -11,6 +11,6 @@ import Foundation
 
 struct AppDataDAO {
     static func deleteAllPreloadedData() {
-        ChordFingerPattern.deleteAll()
+        ChordFingerPatternDAO().deleteAll()
     }
 }
