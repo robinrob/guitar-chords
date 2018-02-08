@@ -64,4 +64,12 @@ class TestChordFingerPattern: XCTestCase {
         let expectedJSON = "{\"string_2_fret\":2,\"string_3_fret\":3,\"string_4_fret\":4,\"chord_name\":\"test-chord\",\"string_5_fret\":5,\"string_6_fret\":6,\"guitar_tuning\":\"test-tuning\",\"string_1_fret\":1}"
         assert(json == expectedJSON)
     }
+    
+    func testShouldDecodeFromJSON() {
+        let json = "{\"string_2_fret\":2,\"string_3_fret\":3,\"string_4_fret\":4,\"chord_name\":\"test-chord\",\"string_5_fret\":5,\"string_6_fret\":6,\"guitar_tuning\":\"test-tuning\",\"string_1_fret\":1}"
+        
+        let chordFingerPattern = ChordFingerPatternDAO().fromJSON(json)!
+        
+        assert(chordFingerPattern.chord_name == "test-chord")
+    }
 }

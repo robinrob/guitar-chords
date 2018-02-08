@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var persistentContainer: NSPersistentContainer {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     }
+    
+    static var context: NSManagedObjectContext {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -149,7 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     return managedObjectModel
                 }()
                 
-                let container = NSPersistentContainer(name: "PersistentTodoList", managedObjectModel: managedObjectModel)
+                let container = NSPersistentContainer(name: "Test", managedObjectModel: managedObjectModel)
                 let description = NSPersistentStoreDescription()
                 description.type = NSInMemoryStoreType
                 description.shouldAddStoreAsynchronously = false // Make it simpler in test env
