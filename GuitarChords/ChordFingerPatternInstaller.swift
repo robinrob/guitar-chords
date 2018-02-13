@@ -12,6 +12,8 @@ class ChordFingerPatternInstaller {
     func installChordPatterns() {
         print("CALCULATING FINGER PATTERNS ...")
         ChordFingerPatternDAO().deleteAll()
+//        var fingerPattern: FingerPattern[]
+        
         for tuning in GuitarTuning.all {
 //        for tuning in [GuitarTuning.standard] {
             print("tuning: \(tuning)")

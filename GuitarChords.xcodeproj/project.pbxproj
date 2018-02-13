@@ -63,7 +63,6 @@
 		00B3B7661FFD2D4B00625E63 /* ChordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */; };
 		00B801181FFAA39E00959AD1 /* TestChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B801171FFAA39E00959AD1 /* TestChord.swift */; };
 		00C00DAB1FF945B100D4E710 /* ChordFingerPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */; };
-		00CE40691FFAB527005E1834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00CE40671FFAB527005E1834 /* Model.xcdatamodeld */; };
 		00FBFE55202B58B9004413F9 /* TestChordFingerPatternGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBFE54202B58B9004413F9 /* TestChordFingerPatternGenerator.swift */; };
 /* End PBXBuildFile section */
 
@@ -147,7 +146,6 @@
 		00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordCategory.swift; sourceTree = "<group>"; };
 		00B801171FFAA39E00959AD1 /* TestChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestChord.swift; sourceTree = "<group>"; };
 		00C00DAA1FF945B100D4E710 /* ChordFingerPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordFingerPattern.swift; sourceTree = "<group>"; };
-		00CE40681FFAB527005E1834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		00FBFE54202B58B9004413F9 /* TestChordFingerPatternGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChordFingerPatternGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,7 +230,6 @@
 				00B273EA2008434E00E25741 /* Model.sqlite */,
 				00B273EB2008434E00E25741 /* Model.sqlite-shm */,
 				00B273E92008434E00E25741 /* Model.sqlite-wal */,
-				00CE40671FFAB527005E1834 /* Model.xcdatamodeld */,
 				0099157C1FF3DA8D008C6AC5 /* Note.swift */,
 				007020071FF2B652005BAB60 /* SettingsViewController.swift */,
 				0099156E1FF3DA8B008C6AC5 /* StringFret.swift */,
@@ -437,7 +434,6 @@
 				0099158C1FF3DA8E008C6AC5 /* ChordDictionary.swift in Sources */,
 				009915911FF3DA8E008C6AC5 /* GuitarTuning.swift in Sources */,
 				009915941FF3DA8E008C6AC5 /* Note.swift in Sources */,
-				00CE40691FFAB527005E1834 /* Model.xcdatamodeld in Sources */,
 				009915921FF3DA8E008C6AC5 /* MajorChord.swift in Sources */,
 				0099158B1FF3DA8E008C6AC5 /* GuitarStringType.swift in Sources */,
 				00B3B7661FFD2D4B00625E63 /* ChordCategory.swift in Sources */,
@@ -758,19 +754,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		00CE40671FFAB527005E1834 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				00CE40681FFAB527005E1834 /* Model.xcdatamodel */,
-			);
-			currentVersion = 00CE40681FFAB527005E1834 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 00701FF81FF2B652005BAB60 /* Project object */;
 }

@@ -10,32 +10,16 @@ import Foundation
 import CoreData
 
 class ChordFingerPatternDAO {
-    var context: NSManagedObjectContext?
-    
     init() {
-        self.context = AppDelegate.context
+        // load data from JSON
     }
     
-    init(context: NSManagedObjectContext) {
-        self.context = context
-    }
-    
-    func insertNew() -> ChordFingerPattern {
-        return NSEntityDescription.insertNewObject(
-            forEntityName: "ChordFingerPattern",
-            into: self.context!
-        ) as! ChordFingerPattern
-    }
-    
-    
-    func insertFromFingerPattern(
+    func fromFingerPattern(
         fingerPattern: FingerPattern,
         chordType: ChordType,
         guitarTuning: GuitarTuning
         ) -> ChordFingerPattern {
-        let context = AppDelegate.persistentContainer.viewContext
-        
-        let chordFingerPattern = NSEntityDescription.insertNewObject(forEntityName: "ChordFingerPattern", into: context) as! ChordFingerPattern
+        let chordFingerPattern = ChordFingerPattern()
         chordFingerPattern.chord_name = chordType.label
         chordFingerPattern.guitar_tuning = guitarTuning.label
         chordFingerPattern.string_1_fret = Int16(fingerPattern.getFingerPosition(byStringType: .one).fretNumAsInt)
@@ -45,7 +29,7 @@ class ChordFingerPatternDAO {
         chordFingerPattern.string_5_fret = Int16(fingerPattern.getFingerPosition(byStringType: .five).fretNumAsInt)
         chordFingerPattern.string_6_fret = Int16(fingerPattern.getFingerPosition(byStringType: .six).fretNumAsInt)
         
-tm        return chordFingerPattern
+        return chordFingerPattern
     }
     
     func stringTypeToFretColumn(_ chordFingerPattern: ChordFingerPattern, stringType: GuitarStringType) -> Any {
@@ -65,43 +49,10 @@ tm        return chordFingerPattern
         }
     }
     
-     func getByChordTypeAndTuning(chordType: ChordType, guitarTuning: GuitarTuning) -> [ChordFingerPattern] {
-        let context = AppDelegate.persistentContainer.viewContext
-        
-        let request: NSFetchRequest<ChordFingerPattern> = ChordFingerPattern.fetchRequest()
-        request.predicate = NSPredicate(format: "(chord_name = %@) and (guitar_tuning = %@)", chordType.label, guitarTuning.label)
-        
-        let chordFingerPatterns = try? context.fetch(request)
-        return chordFingerPatterns!
-    }
-    
-     func delete(_ chordFingerPatterns: [ChordFingerPattern]) {
-        let context = AppDelegate.persistentContainer.viewContext
-        
-        for chordFingerPattern in chordFingerPatterns {
-            context.delete(chordFingerPattern)
-        }
-    }
-    
-     func deleteAll() {
-        let context = AppDelegate.persistentContainer.viewContext
-        
-        let request: NSFetchRequest<ChordFingerPattern> = ChordFingerPattern.fetchRequest()
-        
-        let chordFingerPatterns = try? context.fetch(request)
-        delete(chordFingerPatterns!)
-    }
-    
-     func deleteAllSharp() {
-        let context = AppDelegate.persistentContainer.viewContext
-        
-        let request: NSFetchRequest<ChordFingerPattern> = ChordFingerPattern.fetchRequest()
-        request.predicate = NSPredicate(format: "(chord_name like *# Major)")
-        
-        let chordFingerPatterns = try? context.fetch(request)
-        delete(chordFingerPatterns!)
-    }
-    
+//     func getByChordTypeAndTuning(chordType: ChordType, guitarTuning: GuitarTuning) -> [ChordFingerPattern] {
+//        return chordFingerPatterns!
+//    }
+
     func toFingerPatterns(
         chordFingerPatterns: [ChordFingerPattern],
         onGuitar guitar: Guitar
@@ -123,7 +74,7 @@ tm        return chordFingerPattern
         }
         
         return FingerPattern(fingerPositions: fingerPositions)
-    }
+    }r
     
     func fromJSON(_ json: String) -> ChordFingerPattern? {
         var chordFingerPattern: ChordFingerPattern? = nil
