@@ -135,29 +135,5 @@ class ChordChordFingerPatternGenerator {
             return false
         }
     }
-    
-    func installChordPatterns() {
-        print("CALCULATING FINGER PATTERNS ...")
-        ChordFingerPatternDAO().deleteAll()
-        for tuning in GuitarTuning.all {
-            //        for tuning in [GuitarTuning.standard] {
-            print("tuning: \(tuning)")
-            let guitar = Guitar(withTuning: tuning)
-            
-            for chordType in ChordDictionary.getAllChordTypes() {
-                //              for chordType in [ChordType.aMajor, ChordType.aMinor] {
-                print("chordType: \(chordType)")
-                let fingerPatterns = self.findAllFingerPatterns(onGuitar: guitar, ofChordType: chordType, withMaxFretWidth: 3)
-                for fingerPattern in fingerPatterns {
-                    ChordFingerPatternDAO().insertFromFingerPattern(
-                        fingerPattern: fingerPattern,
-                        chordType: chordType,
-                        guitarTuning: tuning
-                    )
-                }
-            }
-        }
-        Database.save()
-    }
 }
 

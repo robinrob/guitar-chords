@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FingerPattern: CustomStringConvertible, Equatable, Encodable {
+class FingerPattern: CustomStringConvertible, Equatable {
     var fingerPositions: [FingerPosition]
     var fretWidth: Int {
         get {
@@ -48,10 +48,6 @@ class FingerPattern: CustomStringConvertible, Equatable, Encodable {
     
     var averageFretNum: Float {
         return Float(self.fretNums.reduce(0, +)) / Float(fretNums.count)
-    }
-    
-    var toJSON: String {
-        
     }
     
 //    var stringFrets -> [StringFret] {
@@ -121,19 +117,8 @@ class FingerPattern: CustomStringConvertible, Equatable, Encodable {
 //        return false
     }
     
-    static func getGuitarFingerPatternsByChordTypeAndTuning(
-        onGuitar guitar: Guitar,
-        chordType: ChordType,
-        guitarTuning: GuitarTuning
-        ) -> [FingerPattern] {
-        let chordFingerPatterns = ChordFingerPatternDAO().getByChordTypeAndTuning(chordType: chordType, guitarTuning: guitarTuning)
-        return ChordFingerPatternDAO().toFingerPatterns(chordFingerPatterns: chordFingerPatterns, onGuitar: guitar)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.name, forKey: .name)
-        try container.encode(self.age, forKey: .age)
+    func toJSON() -> String {
+        return ""
     }
     
     private enum CodingKeys: String, CodingKey {

@@ -199,6 +199,23 @@ class TestFingerPattern: XCTestCase {
         assert(unmutedAMajor.isChord(ChordType.aMajor))
     }
     
+    func testShouldConvertToJSON() {
+        let aMajorPattern = FingerPattern(
+            fingerPositions: [
+                FingerPosition(mutingString: self.guitar!.getString(byType: GuitarStringType.one)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.two).getFret(atFretNum: 12)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.three).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.four).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.five).getFret(atFretNum: 14)),
+                FingerPosition(atFret: self.guitar!.getString(byType: GuitarStringType.six).getFret(atFretNum: 12))
+            ]
+        )
+        
+        let json = aMajorPattern.toJSON()
+        
+        assert("" == json)
+    }
+    
 //    func testShouldBeSubsetOfOtherPattern() {
 //        let patternA = FingerPattern(
 //            fingerPositions: [

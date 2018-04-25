@@ -197,7 +197,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func updateVariationsFor(chordName: String) {
-        let fingerPatterns = FingerPattern.getGuitarFingerPatternsByChordTypeAndTuning(
+        let fingerPatterns = FingerPatternDAO.getGuitarFingerPatternsByChordTypeAndTuning(
             onGuitar: self.guitar!,
             chordType: ChordType(rawValue: chordName)!,
             guitarTuning: self.guitarTuning
