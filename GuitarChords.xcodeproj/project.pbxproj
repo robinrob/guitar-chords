@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0007F17A1FF9520400FA820F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007F1791FF9520400FA820F /* Database.swift */; };
-		0038BF38202B5D25007FC60F /* TestChordFingerPatternDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038BF37202B5D25007FC60F /* TestChordFingerPatternDAO.swift */; };
+		0038BF38202B5D25007FC60F /* TestFingerPatternDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038BF37202B5D25007FC60F /* TestFingerPatternDAO.swift */; };
 		003FDF76200709F700C27BE8 /* UserDefaultsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FDF75200709F700C27BE8 /* UserDefaultsDAO.swift */; };
 		005199E9202B554C0093F3D2 /* FingerPatternCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005199E8202B554C0093F3D2 /* FingerPatternCalculator.swift */; };
 		00533BB3202B5ACD00F49F4A /* FingerPatternDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00533BB2202B5ACD00F49F4A /* FingerPatternDAO.swift */; };
@@ -30,7 +29,6 @@
 		0070200D1FF2B652005BAB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0070200C1FF2B652005BAB60 /* Assets.xcassets */; };
 		007020101FF2B652005BAB60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0070200E1FF2B652005BAB60 /* LaunchScreen.storyboard */; };
 		007020261FF2B652005BAB60 /* GuitarChordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007020251FF2B652005BAB60 /* GuitarChordsUITests.swift */; };
-		0087DEB12090B26000C29981 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0087DEB02090B26000C29981 /* main.swift */; };
 		0087DEB32090B34C00C29981 /* FingerPatternInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0087DEB22090B34C00C29981 /* FingerPatternInstaller.swift */; };
 		0099157E1FF3DA8E008C6AC5 /* StringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009915661FF3DA8A008C6AC5 /* StringViewController.swift */; };
 		0099157F1FF3DA8E008C6AC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009915671FF3DA8A008C6AC5 /* ViewController.swift */; };
@@ -58,7 +56,7 @@
 		00B273F02008455B00E25741 /* AppDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B273EF2008455B00E25741 /* AppDataDAO.swift */; };
 		00B3B7661FFD2D4B00625E63 /* ChordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */; };
 		00B801181FFAA39E00959AD1 /* TestChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B801171FFAA39E00959AD1 /* TestChord.swift */; };
-		00FBFE55202B58B9004413F9 /* TestChordFingerPatternGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBFE54202B58B9004413F9 /* TestChordFingerPatternGenerator.swift */; };
+		00FBFE55202B58B9004413F9 /* TestFingerPatternCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBFE54202B58B9004413F9 /* TestFingerPatternCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0007F1791FF9520400FA820F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		0038BF37202B5D25007FC60F /* TestChordFingerPatternDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChordFingerPatternDAO.swift; sourceTree = "<group>"; };
+		0038BF37202B5D25007FC60F /* TestFingerPatternDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFingerPatternDAO.swift; sourceTree = "<group>"; };
 		003FDF75200709F700C27BE8 /* UserDefaultsDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDAO.swift; sourceTree = "<group>"; };
 		005199E8202B554C0093F3D2 /* FingerPatternCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPatternCalculator.swift; sourceTree = "<group>"; };
 		00533BB2202B5ACD00F49F4A /* FingerPatternDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPatternDAO.swift; sourceTree = "<group>"; };
@@ -108,7 +105,6 @@
 		007020211FF2B652005BAB60 /* GuitarChordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuitarChordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		007020251FF2B652005BAB60 /* GuitarChordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarChordsUITests.swift; sourceTree = "<group>"; };
 		007020271FF2B652005BAB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0087DEB02090B26000C29981 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0087DEB22090B34C00C29981 /* FingerPatternInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerPatternInstaller.swift; sourceTree = "<group>"; };
 		009915661FF3DA8A008C6AC5 /* StringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringViewController.swift; sourceTree = "<group>"; };
 		009915671FF3DA8A008C6AC5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +133,7 @@
 		00B273EF2008455B00E25741 /* AppDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataDAO.swift; sourceTree = "<group>"; };
 		00B3B7651FFD2D4B00625E63 /* ChordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordCategory.swift; sourceTree = "<group>"; };
 		00B801171FFAA39E00959AD1 /* TestChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestChord.swift; sourceTree = "<group>"; };
-		00FBFE54202B58B9004413F9 /* TestChordFingerPatternGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestChordFingerPatternGenerator.swift; sourceTree = "<group>"; };
+		00FBFE54202B58B9004413F9 /* TestFingerPatternCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFingerPatternCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +184,6 @@
 		007020021FF2B652005BAB60 /* GuitarChords */ = {
 			isa = PBXGroup;
 			children = (
-				0087DEB02090B26000C29981 /* main.swift */,
 				007020031FF2B652005BAB60 /* AppDelegate.swift */,
 				009915701FF3DA8B008C6AC5 /* ArrayMultiplier.swift */,
 				0099157B1FF3DA8D008C6AC5 /* Assets.xcassets */,
@@ -200,7 +195,6 @@
 				005199E8202B554C0093F3D2 /* FingerPatternCalculator.swift */,
 				0087DEB22090B34C00C29981 /* FingerPatternInstaller.swift */,
 				009915781FF3DA8D008C6AC5 /* ChordType.swift */,
-				0007F1791FF9520400FA820F /* Database.swift */,
 				009915771FF3DA8C008C6AC5 /* Extensions.swift */,
 				0099156A1FF3DA8A008C6AC5 /* FingerPattern.swift */,
 				009915721FF3DA8C008C6AC5 /* FingerPosition.swift */,
@@ -234,13 +228,13 @@
 		007020191FF2B652005BAB60 /* GuitarChordsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0038BF37202B5D25007FC60F /* TestChordFingerPatternDAO.swift */,
+				0038BF37202B5D25007FC60F /* TestFingerPatternDAO.swift */,
 				00B801171FFAA39E00959AD1 /* TestChord.swift */,
 				00651A491FFAA34300D23577 /* Mocks.swift */,
 				00651A411FFAA34200D23577 /* TestChordDictionary.swift */,
 				00651A401FFAA34200D23577 /* TestData.swift */,
 				00651A461FFAA34300D23577 /* TestExtensions.swift */,
-				00FBFE54202B58B9004413F9 /* TestChordFingerPatternGenerator.swift */,
+				00FBFE54202B58B9004413F9 /* TestFingerPatternCalculator.swift */,
 				00651A421FFAA34200D23577 /* TestFingerPattern.swift */,
 				00651A481FFAA34300D23577 /* TestFingerPosition.swift */,
 				00651A451FFAA34300D23577 /* TestFunc.swift */,
@@ -397,10 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0087DEB12090B26000C29981 /* main.swift in Sources */,
 				003FDF76200709F700C27BE8 /* UserDefaultsDAO.swift in Sources */,
 				00B273F02008455B00E25741 /* AppDataDAO.swift in Sources */,
-				0007F17A1FF9520400FA820F /* Database.swift in Sources */,
 				0099157F1FF3DA8E008C6AC5 /* ViewController.swift in Sources */,
 				009915831FF3DA8E008C6AC5 /* Func.swift in Sources */,
 				0099158D1FF3DA8E008C6AC5 /* GuitarFret.swift in Sources */,
@@ -438,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00651A571FFAA34400D23577 /* TestFingerPosition.swift in Sources */,
-				0038BF38202B5D25007FC60F /* TestChordFingerPatternDAO.swift in Sources */,
+				0038BF38202B5D25007FC60F /* TestFingerPatternDAO.swift in Sources */,
 				00651A501FFAA34400D23577 /* TestChordDictionary.swift in Sources */,
 				00651A511FFAA34400D23577 /* TestFingerPattern.swift in Sources */,
 				00651A541FFAA34400D23577 /* TestFunc.swift in Sources */,
@@ -447,7 +439,7 @@
 				00651A4F1FFAA34400D23577 /* TestData.swift in Sources */,
 				00B801181FFAA39E00959AD1 /* TestChord.swift in Sources */,
 				00651A521FFAA34400D23577 /* TestGuitarString.swift in Sources */,
-				00FBFE55202B58B9004413F9 /* TestChordFingerPatternGenerator.swift in Sources */,
+				00FBFE55202B58B9004413F9 /* TestFingerPatternCalculator.swift in Sources */,
 				00651A4C1FFAA34400D23577 /* TestGuitar.swift in Sources */,
 				00651A561FFAA34400D23577 /* TestGuitarFret.swift in Sources */,
 				00651A581FFAA34400D23577 /* Mocks.swift in Sources */,

@@ -11,15 +11,15 @@ import Foundation
 import XCTest
 @testable import GuitarChords
 
-class TestChordFingerPatternGenerator: XCTestCase {
-    var generator: ChordChordFingerPatternGenerator?
+class TestChordFingerPatternCalculator: XCTestCase {
+    var generator: FingerPatternCalculator?
     var guitar: Guitar?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
-        self.generator = ChordChordFingerPatternGenerator()
+        self.generator = FingerPatternCalculator()
         self.guitar = Guitar()
     }
     

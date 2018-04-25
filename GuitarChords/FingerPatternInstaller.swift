@@ -12,6 +12,6 @@ import Foundation
 class FingerPatternInstaller {
     
     func installAll() {
-        FingerPatternCalculator()
+        let fingerPatterns = FingerPatternCalculator().findAllFingerPatterns()
     }
 }

@@ -13,7 +13,22 @@ class FingerPatternCalculator {
         return ""
     }
     
-    func findAllFingerPatterns(
+    func findAllFingerPatterns() -> [FingerPattern] {
+        print("CALCULATING FINGER PATTERNS ...")
+        var fingerPatterns : [FingerPattern] = []
+        for tuning in GuitarTuning.all {
+            print("tuning: \(tuning)")
+            let guitar = Guitar(withTuning: tuning)
+            
+            for chordType in ChordDictionary.getAllChordTypes() {
+                print("chordType: \(chordType)")
+                fingerPatterns += self.findFingerPatternsOnGuitar(onGuitar: guitar, ofChordType: chordType, withMaxFretWidth: 3)
+            }
+        }
+        return fingerPatterns
+    }
+    
+    func findFingerPatternsOnGuitar(
         onGuitar guitar: Guitar,
         ofChordType chordType: ChordType,
         withMaxFretWidth fretWidth: Int = 4
