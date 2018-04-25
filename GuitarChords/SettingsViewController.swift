@@ -89,7 +89,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func recalculateChords(_ sender: Any) {
-        ChordFingerPatternInstaller().installChordPatterns()
+        FingerPatternInstaller().installAll()
 //        ChordSaver().installSharpChordPatterns()
     }
     

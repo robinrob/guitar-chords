@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class ChordFingerPatternDAO {
+class FingerPatternDAO {
     init() {
         // load data from JSON
     }

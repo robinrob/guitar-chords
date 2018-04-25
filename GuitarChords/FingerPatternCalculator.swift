@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChordChordFingerPatternGenerator {
+class FingerPatternCalculator {
     func generateFingerPatternJSON() -> String {
         return ""
     }
