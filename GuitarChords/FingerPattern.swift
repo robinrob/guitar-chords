@@ -117,18 +117,29 @@ class FingerPattern: CustomStringConvertible, Equatable {
 //        return false
     }
     
-    func toJSON() -> String {
-        return ""
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case chord_name
-        case guitar_tuning
-        case string_1_fret
-        case string_2_fret
-        case string_3_fret
-        case string_4_fret
-        case string_5_fret
-        case string_6_fret
+    func toJSON(guitar: Guitar, chordType: ChordType) -> String? {
+        var json: String?
+        let fingerPatternDict: [String: Any] = [
+            "guitarTuning": guitar.tuning.label,
+            "chordType": chordType.label,
+            "string1fret": fingerPositions[0].fretNumAsInt,
+            "string2fret": fingerPositions[1].fretNumAsInt,
+            "string3fret": fingerPositions[2].fretNumAsInt,
+            "string4fret": fingerPositions[3].fretNumAsInt,
+            "string5fret": fingerPositions[4].fretNumAsInt,
+            "string6fret": fingerPositions[5].fretNumAsInt,
+        ]
+        do {
+            json = try String.init(
+                data: JSONSerialization.data(
+                    withJSONObject: fingerPatternDict,
+                    options: .prettyPrinted
+                ),
+                encoding: .utf8
+            )
+        } catch {
+            // nothing
+        }
+        return json
     }
 }

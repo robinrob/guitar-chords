@@ -211,9 +211,23 @@ class TestFingerPattern: XCTestCase {
             ]
         )
         
-        let json = aMajorPattern.toJSON()
+        let json = aMajorPattern.toJSON(guitar: self.guitar!, chordType: ChordType.aMajor)!
         
-        assert("" == json)
+        do {
+            var jsonObj: [String: Any]
+            try jsonObj = JSONSerialization.jsonObject(with: json.data(using: .utf8)!) as! [String: Any]
+        
+            assert(jsonObj["guitarTuning"] as! String == "Standard")
+            assert(jsonObj["chordType"] as! String == ChordType.aMajor.label)
+//            XCTAssertEqual(jsonObj["string1fret"] as! Int, 12)
+            XCTAssertEqual(jsonObj["string2fret"] as! Int, 14)
+            XCTAssertEqual(jsonObj["string3fret"] as! Int, 14)
+            XCTAssertEqual(jsonObj["string4fret"] as! Int, 14)
+            XCTAssertEqual(jsonObj["string5fret"] as! Int, 14)
+            XCTAssertEqual(jsonObj["string6fret"] as! Int, 12)
+        } catch {
+            assert(false)
+        }
     }
     
 //    func testShouldBeSubsetOfOtherPattern() {
