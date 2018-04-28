@@ -64,6 +64,17 @@ class FingerPattern: CustomStringConvertible, Equatable {
         self.fingerPositions = fingerPositions
     }
     
+    init(onGuitar guitar: Guitar, withPositionsDict positionsDict: [String: Any]) {
+        self.fingerPositions = [
+            FingerPosition(onGuitar: guitar, forStringType: .one, atFretNum: positionsDict["string1fret"] as! Int),
+            FingerPosition(onGuitar: guitar, forStringType: .two, atFretNum: positionsDict["string2fret"] as! Int),
+            FingerPosition(onGuitar: guitar, forStringType: .three, atFretNum: positionsDict["string3fret"] as! Int),
+            FingerPosition(onGuitar: guitar, forStringType: .four, atFretNum: positionsDict["string4fret"] as! Int),
+            FingerPosition(onGuitar: guitar, forStringType: .five, atFretNum: positionsDict["string5fret"] as! Int),
+            FingerPosition(onGuitar: guitar, forStringType: .six, atFretNum: positionsDict["string6fret"] as! Int)
+        ]
+    }
+    
     func isChord(_ chordType: ChordType) -> Bool {
         return Chord(withNotes: self.notes) == ChordDictionary.getChord(ofType: chordType)
     }
@@ -122,12 +133,12 @@ class FingerPattern: CustomStringConvertible, Equatable {
         let fingerPatternDict: [String: Any] = [
             "guitarTuning": guitar.tuning.label,
             "chordType": chordType.label,
-            "string1fret": fingerPositions[0].fretNumAsInt,
-            "string2fret": fingerPositions[1].fretNumAsInt,
-            "string3fret": fingerPositions[2].fretNumAsInt,
-            "string4fret": fingerPositions[3].fretNumAsInt,
-            "string5fret": fingerPositions[4].fretNumAsInt,
-            "string6fret": fingerPositions[5].fretNumAsInt,
+            "string1fret": self.getFingerPosition(byStringType: GuitarStringType.one).fretNumAsInt,
+            "string2fret": self.getFingerPosition(byStringType: GuitarStringType.two).fretNumAsInt,
+            "string3fret": self.getFingerPosition(byStringType: GuitarStringType.three).fretNumAsInt,
+            "string4fret": self.getFingerPosition(byStringType: GuitarStringType.four).fretNumAsInt,
+            "string5fret": self.getFingerPosition(byStringType: GuitarStringType.five).fretNumAsInt,
+            "string6fret": self.getFingerPosition(byStringType: GuitarStringType.six).fretNumAsInt
         ]
         do {
             json = try String.init(

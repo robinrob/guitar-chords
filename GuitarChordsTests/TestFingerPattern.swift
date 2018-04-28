@@ -219,8 +219,8 @@ class TestFingerPattern: XCTestCase {
         
             assert(jsonObj["guitarTuning"] as! String == "Standard")
             assert(jsonObj["chordType"] as! String == ChordType.aMajor.label)
-//            XCTAssertEqual(jsonObj["string1fret"] as! Int, 12)
-            XCTAssertEqual(jsonObj["string2fret"] as! Int, 14)
+            XCTAssertEqual(jsonObj["string1fret"] as! Int, -1)
+            XCTAssertEqual(jsonObj["string2fret"] as! Int, 12)
             XCTAssertEqual(jsonObj["string3fret"] as! Int, 14)
             XCTAssertEqual(jsonObj["string4fret"] as! Int, 14)
             XCTAssertEqual(jsonObj["string5fret"] as! Int, 14)
@@ -228,6 +228,23 @@ class TestFingerPattern: XCTestCase {
         } catch {
             assert(false)
         }
+    }
+    
+    func testShouldCreateFromFingerPositionsDict() {
+        let fingerPatternDict: [String: Any] = [
+            "guitarTuning": "blah",
+            "chordType": "blah",
+            "string1fret": -1,
+            "string2fret": 12,
+            "string3fret": 14,
+            "string4fret": 14,
+            "string5fret": 14,
+            "string6fret": 12
+        ]
+
+        let fingerPattern = FingerPattern(onGuitar: self.guitar!, withPositionsDict: fingerPatternDict)
+        
+        XCTAssertEqual(true, fingerPattern.isChord(ChordType.aMajor))
     }
     
 //    func testShouldBeSubsetOfOtherPattern() {

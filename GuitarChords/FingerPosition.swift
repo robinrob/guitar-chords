@@ -69,6 +69,16 @@ struct FingerPosition: Equatable, Hashable {
         self.fret = nil
     }
     
+    init(onGuitar guitar: Guitar, forStringType stringType: GuitarStringType, atFretNum fretNum: Int) {
+        if (fretNum == -1) {
+            self.string = guitar.getString(byType: stringType)
+            self.fret = nil
+        } else {
+            self.fret = GuitarFret(onString: guitar.getString(byType: stringType), fretNum: fretNum)
+            self.string = nil
+        }
+    }
+    
     mutating func mute() {
         self.muted = true
     }
